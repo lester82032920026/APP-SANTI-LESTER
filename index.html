@@ -2,133 +2,171 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
+<meta name="theme-color" content="#0f172a">
 <title>Alianza Santiago & Lester</title>
 <style>
 :root{
-  --pri:#6366f1;--pri-d:#4f46e5;--pri-l:#eef2ff;--pri-g:linear-gradient(135deg,#6366f1,#8b5cf6);
-  --ok:#10b981;--ok-l:#ecfdf5;--rd:#ef4444;--rd-l:#fef2f2;--wn:#f59e0b;
-  --bg:#f8fafc;--card:#fff;--tx:#1e293b;--mu:#64748b;--ln:#e2e8f0;--ln-d:#cbd5e1;
-  --r:16px;--r-sm:10px;--sh:0 1px 3px rgba(15,23,42,.06),0 1px 2px rgba(15,23,42,.04);
-  --sh-md:0 4px 12px rgba(15,23,42,.08);--sh-lg:0 12px 32px rgba(15,23,42,.12);
-  --tr:.2s cubic-bezier(.4,0,.2,1);--nav-h:68px;
+  --bg:#f1f5f9;--card:#fff;--tx:#0f172a;--mu:#64748b;--ln:#e2e8f0;
+  --nav:#0f172a;--nav-tx:#fff;
+  --pri:#2563eb;--pri-d:#1d4ed8;--pri-bg:#eff6ff;
+  --cta:#f97316;--cta-d:#ea580c;--cta-bg:#fff7ed;
+  --ok:#16a34a;--ok-bg:#f0fdf4;--rd:#dc2626;--rd-bg:#fef2f2;--wn:#d97706;--wn-bg:#fffbeb;
+  --r:18px;--r-sm:12px;
+  --sh:0 1px 3px rgba(15,23,42,.08),0 1px 2px rgba(15,23,42,.04);
+  --sh-md:0 4px 12px rgba(15,23,42,.08);
+  --sh-lg:0 12px 32px rgba(15,23,42,.14);
+  --tr:.2s cubic-bezier(.4,0,.2,1);--nav-h:72px;
   padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0);
 }
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]){
-  --pri-l:#1e1b4b;--ok-l:#064e3b;--rd-l:#7f1d1d;--bg:#0f172a;--card:#1e293b;--tx:#f1f5f9;--mu:#94a3b8;--ln:#334155;--ln-d:#475569;
+  --bg:#0b1220;--card:#1e293b;--tx:#f1f5f9;--mu:#94a3b8;--ln:#334155;
+  --pri-bg:#172554;--cta-bg:#431407;--ok-bg:#052e16;--rd-bg:#450a0a;--wn-bg:#451a03;
 }}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.5;-webkit-font-smoothing:antialiased;font-size:15px;padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px))}
+body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--tx);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px))}
+
 /* Topbar */
-.topbar{position:sticky;top:0;z-index:20;background:var(--pri-g);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-size:.82rem;font-weight:500;box-shadow:var(--sh-md)}
-.topbar b{font-size:.95rem;font-weight:700;letter-spacing:-.3px}
-.topbar span{opacity:.9;font-variant-numeric:tabular-nums}
+.topbar{position:sticky;top:0;z-index:30;background:var(--nav);color:var(--nav-tx);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;font-size:.82rem;font-weight:500;box-shadow:var(--sh-md)}
+.topbar b{font-size:1rem;font-weight:800;letter-spacing:-.4px;display:flex;align-items:center;gap:6px}
+.topbar .right{display:flex;align-items:center;gap:10px}
+.rate-badge{background:rgba(255,255,255,.14);padding:5px 10px;border-radius:99px;font-size:.72rem;font-weight:700;letter-spacing:.3px;border:1px solid rgba(255,255,255,.2)}
+#clk{opacity:.85;font-variant-numeric:tabular-nums;font-size:.72rem}
+
 /* Hero */
-.hero{background:var(--pri-g);color:#fff;text-align:center;padding:32px 20px 28px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 10%,rgba(255,255,255,.15),transparent 50%),radial-gradient(circle at 80% 90%,rgba(255,255,255,.1),transparent 50%)}
-.hero h1{font-size:clamp(1.8rem,7vw,2.6rem);font-weight:800;letter-spacing:-1.2px;line-height:1.1;position:relative}
-.hero h1 em{font-style:normal;color:#fbbf24}
-.hero p{font-size:.78rem;opacity:.85;letter-spacing:3px;margin-top:8px;font-weight:600;position:relative}
-.hero svg{display:block;width:100%;max-width:460px;margin:14px auto 0;position:relative}
-/* Main */
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 45%,#f97316 130%);color:#fff;text-align:center;padding:36px 20px 30px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,rgba(249,115,22,.35),transparent 55%),radial-gradient(circle at 85% 80%,rgba(37,99,235,.4),transparent 55%)}
+.hero h1{font-size:clamp(2rem,8vw,3rem);font-weight:900;letter-spacing:-1.4px;line-height:1.05;position:relative}
+.hero h1 em{font-style:normal;color:#fb923c}
+.hero p{font-size:.72rem;opacity:.85;letter-spacing:4px;margin-top:10px;font-weight:700;position:relative}
+.hero svg{display:block;width:100%;max-width:460px;margin:16px auto 0;position:relative}
+
+/* Main & Card */
 main{max-width:760px;margin:0 auto;padding:16px 14px 24px}
-/* Card */
-.card{background:var(--card);border:1px solid var(--ln);border-radius:var(--r);padding:18px;margin-bottom:14px;box-shadow:var(--sh);animation:fade .3s ease}
-@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.card h3{font-size:1.02rem;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;letter-spacing:-.2px}
-.card h3 .ico{width:26px;height:26px;border-radius:8px;background:var(--pri-l);color:var(--pri);display:inline-flex;align-items:center;justify-content:center;font-size:.85rem}
-/* Grid KPI */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}
-.k{background:var(--pri-l);border-radius:12px;padding:12px 14px;border:1px solid transparent;transition:border-color var(--tr)}
-.k:hover{border-color:var(--pri)}
-.k small{color:var(--mu);display:block;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px}
-.k b{font-size:1.15rem;font-weight:700;display:block;font-variant-numeric:tabular-nums;letter-spacing:-.3px}
-.k b.pos{color:var(--ok)}.k b.neg{color:var(--rd)}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:var(--r);padding:20px 18px;margin-bottom:14px;box-shadow:var(--sh);animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.card h3{font-size:1.05rem;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:10px;letter-spacing:-.3px}
+.card h3 .ico{width:30px;height:30px;border-radius:10px;background:var(--pri-bg);color:var(--pri);display:inline-flex;align-items:center;justify-content:center;font-size:.9rem}
+
+/* KPI / prices */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin-bottom:14px}
+.k{background:var(--pri-bg);border-radius:14px;padding:14px;border:1px solid transparent;transition:all var(--tr)}
+.k:hover{border-color:var(--pri);transform:translateY(-1px)}
+.k small{color:var(--mu);display:block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.k-val{font-size:1.2rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.4px;line-height:1.2}
+.k-val.pos{color:var(--ok)}.k-val.neg{color:var(--rd)}
+.money{display:inline-flex;flex-direction:column;line-height:1.2;text-align:left}
+.m-cup{font-weight:800;font-variant-numeric:tabular-nums}
+.m-usd{font-size:.72rem;color:var(--mu);font-weight:600;margin-top:1px}
+
 /* Buttons */
-button{font:inherit;font-size:.85rem;font-weight:600;cursor:pointer;border:1px solid var(--ln);background:var(--card);color:var(--tx);padding:9px 16px;border-radius:var(--r-sm);transition:all var(--tr);display:inline-flex;align-items:center;justify-content:center;gap:6px}
-button:hover{background:var(--pri-l);border-color:var(--pri)}
+button{font:inherit;font-size:.92rem;font-weight:700;cursor:pointer;border:1px solid var(--ln);background:var(--card);color:var(--tx);padding:11px 18px;border-radius:12px;transition:all var(--tr);display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px}
+button:hover{background:var(--pri-bg);border-color:var(--pri)}
 button:active{transform:scale(.97)}
-button.pr{background:var(--pri);color:#fff;border-color:var(--pri);box-shadow:0 2px 8px rgba(99,102,241,.3)}
-button.pr:hover{background:var(--pri-d);border-color:var(--pri-d)}
-button.wa{background:#25d366;color:#fff;border-color:#25d366}
-button.wa:hover{background:#1da851;border-color:#1da851}
+button.pr{background:linear-gradient(135deg,var(--cta),var(--cta-d));color:#fff;border:none;box-shadow:0 4px 12px rgba(249,115,22,.35)}
+button.pr:hover{filter:brightness(1.06)}
+button.cta{width:100%;padding:14px;font-size:1rem;border-radius:14px;margin-top:8px}
+button.wa{background:#25d366;color:#fff;border:none;box-shadow:0 4px 12px rgba(37,211,102,.3)}
+button.wa:hover{filter:brightness(1.06)}
 button.dg{color:var(--rd);border-color:var(--rd)}
-button.dg:hover{background:var(--rd-l)}
+button.dg:hover{background:var(--rd-bg)}
 button:disabled{opacity:.5;cursor:not-allowed}
+
 /* Inputs */
-input,select{font:inherit;font-size:.85rem;color:var(--tx);background:var(--bg);border:1px solid var(--ln);border-radius:var(--r-sm);padding:9px 12px;max-width:100%;transition:all var(--tr);width:100%}
-input:focus,select:focus{outline:none;border-color:var(--pri);box-shadow:0 0 0 3px rgba(99,102,241,.15);background:var(--card)}
+input,select{font:inherit;font-size:.95rem;color:var(--tx);background:var(--bg);border:1.5px solid var(--ln);border-radius:12px;padding:11px 13px;max-width:100%;transition:all var(--tr);width:100%;min-height:44px}
+input:focus,select:focus{outline:none;border-color:var(--pri);box-shadow:0 0 0 3px rgba(37,99,235,.15);background:var(--card)}
 input[readonly]{background:var(--ln);color:var(--mu)}
 .row{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin:10px 0}
-.row>div{display:flex;flex-direction:column;min-width:0;flex:1 1 140px}
-.row label{font-size:.72rem;color:var(--mu);font-weight:600;margin-bottom:4px;text-transform:uppercase;letter-spacing:.3px}
+.row>div{display:flex;flex-direction:column;min-width:0;flex:1 1 150px}
+.row label{font-size:.72rem;color:var(--mu);font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px}
+
 /* Tables */
-.tw{overflow-x:auto;margin-top:8px;-webkit-overflow-scrolling:touch;border-radius:var(--r-sm)}
-table{border-collapse:collapse;width:100%;font-size:.8rem}
-th,td{border-bottom:1px solid var(--ln);padding:9px 8px;text-align:left;white-space:nowrap;vertical-align:middle}
-th{color:var(--mu);font-weight:700;font-size:.68rem;text-transform:uppercase;letter-spacing:.5px;background:var(--bg)}
+.tw{overflow-x:auto;margin-top:10px;-webkit-overflow-scrolling:touch;border-radius:14px;border:1px solid var(--ln)}
+table{border-collapse:collapse;width:100%;font-size:.85rem}
+th,td{border-bottom:1px solid var(--ln);padding:11px 10px;text-align:left;white-space:nowrap;vertical-align:middle}
+th{color:var(--mu);font-weight:700;font-size:.68rem;text-transform:uppercase;letter-spacing:.6px;background:var(--bg)}
 tr:last-child td{border-bottom:none}
-tbody tr:hover td{background:var(--pri-l)}
-td input{width:80px;padding:5px 7px;font-size:.8rem}
-tr.sel td{background:var(--pri-l);border-left:3px solid var(--pri)}
+tbody tr:hover td{background:var(--pri-bg)}
+td input{width:85px;padding:6px 8px;font-size:.82rem;min-height:auto}
+tr.sel td{background:var(--pri-bg);border-left:3px solid var(--pri)}
+td small.mu{font-size:.72rem}
+
 /* Utilities */
-.mu{color:var(--mu);font-size:.78rem;line-height:1.4}
+.mu{color:var(--mu);font-size:.8rem;line-height:1.45}
 .pos{color:var(--ok)}.neg{color:var(--rd)}
-.bar{height:14px;background:var(--ln);border-radius:99px;overflow:hidden;margin:10px 0}
-.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ok),#34d399);border-radius:99px;transition:width .8s cubic-bezier(.4,0,.2,1);box-shadow:0 0 8px rgba(16,185,129,.4)}
-.badge{display:inline-block;padding:2px 8px;border-radius:99px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
-.badge.ok{background:var(--ok-l);color:var(--ok)}
-.badge.rd{background:var(--rd-l);color:var(--rd)}
-.badge.pri{background:var(--pri-l);color:var(--pri)}
+.bar{height:12px;background:var(--ln);border-radius:99px;overflow:hidden;margin:12px 0}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ok),#34d399);border-radius:99px;transition:width .8s ease;box-shadow:0 0 8px rgba(22,163,74,.4)}
+.badge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.3px}
+.badge.ok{background:var(--ok-bg);color:var(--ok)}
+.badge.rd{background:var(--rd-bg);color:var(--rd)}
+.badge.pri{background:var(--pri-bg);color:var(--pri)}
+
 /* Toast */
-#toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + 20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:#1e293b;color:#fff;padding:11px 22px;border-radius:12px;font-size:.85rem;font-weight:500;z-index:100;opacity:0;pointer-events:none;transition:all .3s ease;box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:90vw;text-align:center}
+#toast{position:fixed;left:50%;bottom:calc(var(--nav-h) + 20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:#0f172a;color:#fff;padding:12px 22px;border-radius:12px;font-size:.9rem;font-weight:600;z-index:100;opacity:0;pointer-events:none;transition:all .3s ease;box-shadow:0 8px 24px rgba(0,0,0,.3);max-width:90vw;text-align:center}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
 /* Login */
-#lg{max-width:380px;margin:60px auto;padding:0 16px}
-#lg .card{padding:28px 24px}
-#lg h2{text-align:center;font-size:1.5rem;font-weight:800;margin-bottom:4px;letter-spacing:-.5px}
-#lg .sub{text-align:center;color:var(--mu);font-size:.85rem;margin-bottom:20px}
-#lg .logo{width:64px;height:64px;border-radius:20px;background:var(--pri-g);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:800;margin:0 auto 16px;box-shadow:0 8px 24px rgba(99,102,241,.35)}
+#lg{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px 16px;background:linear-gradient(160deg,#0f172a 0%,#1e3a8a 60%,#f97316 200%)}
+.login-wrap{width:100%;max-width:420px;background:var(--card);border-radius:24px;padding:32px 24px;box-shadow:var(--sh-lg)}
+.login-wrap .logo{width:72px;height:72px;border-radius:22px;background:linear-gradient(135deg,#0f172a,#f97316);color:#fff;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;margin:0 auto 16px;box-shadow:0 8px 24px rgba(15,23,42,.3)}
+.login-wrap h2{text-align:center;font-size:1.7rem;font-weight:900;margin-bottom:4px;letter-spacing:-.6px}
+.login-wrap .sub{text-align:center;color:var(--mu);font-size:.9rem;margin-bottom:22px}
+.pick-label{font-size:.78rem;font-weight:800;color:var(--mu);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;text-align:center}
+.user-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.user-card{background:var(--bg);border:2px solid var(--ln);border-radius:16px;padding:20px 10px;display:flex;flex-direction:column;align-items:center;gap:6px;min-height:auto;cursor:pointer;transition:all var(--tr)}
+.user-card:hover{border-color:var(--pri);background:var(--pri-bg);transform:translateY(-2px)}
+.user-card.sel{border-color:var(--cta);background:var(--cta-bg);box-shadow:0 0 0 4px rgba(249,115,22,.15)}
+.user-card .avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--pri),#7c3aed);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.4rem;margin-bottom:4px}
+.user-card b{font-size:.95rem;font-weight:800}
+.user-card small{font-size:.72rem;color:var(--mu);font-weight:600}
+
 /* Bottom nav */
-.bnav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--card);border-top:1px solid var(--ln);display:flex;justify-content:space-around;padding:6px 0 calc(6px + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 20px rgba(15,23,42,.08);backdrop-filter:blur(12px)}
-.bnav button{background:none;border:none;padding:6px 10px;border-radius:10px;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--mu);font-size:.65rem;font-weight:600;flex:1;max-width:80px}
-.bnav button svg{width:22px;height:22px;stroke-width:2}
-.bnav button.on{color:var(--pri)}
-.bnav button.on svg{stroke:var(--pri)}
-.bnav button:hover{background:var(--pri-l)}
+.bnav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--card);border-top:1px solid var(--ln);display:flex;justify-content:space-around;padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 20px rgba(15,23,42,.1)}
+.bnav button{background:none;border:none;padding:6px 8px;border-radius:12px;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--mu);font-size:.65rem;font-weight:700;flex:1;max-width:84px;min-height:auto}
+.bnav button svg{width:24px;height:24px;stroke-width:2.2}
+.bnav button.on{color:var(--cta)}
+.bnav button.on svg{stroke:var(--cta)}
+.bnav button:hover{background:var(--cta-bg)}
+
 /* Menu grid */
-.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}
-.menu-grid button{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:16px 8px;flex-direction:column;gap:8px;font-size:.75rem;height:auto;font-weight:600;box-shadow:var(--sh)}
-.menu-grid button:hover{border-color:var(--pri);background:var(--pri-l);transform:translateY(-1px)}
-.menu-grid .mi{width:40px;height:40px;border-radius:12px;background:var(--pri-l);color:var(--pri);display:flex;align-items:center;justify-content:center}
-.menu-grid .mi svg{width:22px;height:22px}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:12px}
+.menu-grid button{background:var(--card);border:1.5px solid var(--ln);border-radius:16px;padding:18px 8px;flex-direction:column;gap:8px;font-size:.78rem;height:auto;font-weight:700;box-shadow:var(--sh);min-height:auto}
+.menu-grid button:hover{border-color:var(--cta);background:var(--cta-bg);transform:translateY(-2px)}
+.menu-grid .mi{width:44px;height:44px;border-radius:14px;background:var(--pri-bg);color:var(--pri);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+
 /* Manual */
-.manual h2{font-size:1.3rem;font-weight:800;margin:20px 0 10px;color:var(--pri);letter-spacing:-.3px;padding-top:10px;border-top:1px solid var(--ln)}
+.manual h2{font-size:1.25rem;font-weight:900;margin:22px 0 10px;color:var(--pri);letter-spacing:-.4px;padding-top:12px;border-top:1px solid var(--ln)}
 .manual h2:first-child{border-top:none;padding-top:0;margin-top:0}
-.manual h3{font-size:1rem;font-weight:700;margin:16px 0 6px}
-.manual p{margin:8px 0;line-height:1.6;font-size:.9rem}
-.manual ol,.manual ul{margin:8px 0 8px 22px;font-size:.88rem;line-height:1.6}
+.manual h3{font-size:1rem;font-weight:800;margin:16px 0 6px}
+.manual p{margin:8px 0;line-height:1.65;font-size:.92rem}
+.manual ol,.manual ul{margin:8px 0 8px 22px;font-size:.9rem;line-height:1.65}
 .manual li{margin:5px 0}
-.manual blockquote{background:var(--pri-l);border-left:4px solid var(--pri);padding:10px 14px;border-radius:8px;margin:10px 0;font-size:.86rem;font-style:italic;color:var(--mu)}
+.manual blockquote{background:var(--pri-bg);border-left:4px solid var(--pri);padding:12px 14px;border-radius:10px;margin:12px 0;font-size:.88rem;font-style:italic;color:var(--mu)}
 .manual .step{display:flex;gap:10px;margin:10px 0;align-items:flex-start}
-.manual .step b{background:var(--pri);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0}
-.manual .step span{flex:1;font-size:.88rem;line-height:1.5}
+.manual .step b{background:var(--cta);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;font-weight:800}
+.manual .step span{flex:1;font-size:.9rem;line-height:1.55}
 </style>
 </head>
 <body>
-<div class="topbar"><b>🤝 Alianza Santiago & Lester</b><span id="clk"></span></div>
+<div class="topbar">
+  <b>🤝 Alianza</b>
+  <div class="right">
+    <span class="rate-badge" id="rateBadge">1 USD = 860 CUP</span>
+    <span id="clk"></span>
+  </div>
+</div>
 <div id="root"></div>
 <div id="toast"></div>
 <script>
-/* ============ MODELO ============
-- Cuentas: car (Carro 30%), san (Santiago 50%), les (Lester 20%), osv (Osvaldito préstamo).
-- El préstamo se llama OSVALDITO en toda la app. Moneda interna del préstamo: USD.
-- La tasa CUP/USD puede editarla cualquier usuario (Santiago es el operador diario).
-- Pedidos de Lester: órdenes para usar saldo de 'les' o de 'osv'. Se exportan y Santiago los importa; al "Usarlos" se registra retiro y se descuenta.
-- Gastos de Lester: compras que Lester hizo y envió. Si loan=true, aumentan el préstamo de Osvaldito (convertido a USD con la tasa del momento).
-- Sin datos de prueba: solo usuarios para poder entrar.
+/* ============ MODELO v6 ============
+- Cuentas: car, san, les, osv (Osvaldito · préstamo).
+- Préstamo de Osvaldito: exclusivamente USD.
+- Cada operación conserva su tasa (rate) y fecha/hora.
+- rates[]: histórico de tasas (nunca se sobrescribe).
+- exchanges[]: registro de CUP→USD con tasa aplicada.
+- pendingCUP[]: CUP destinados a cambiar; el equivalente USD se recalcula al tipo actual.
 */
-const KEY="alianza-v4";
+const KEY="alianza-v6", OLD=["alianza-v5","alianza-v4"];
 const ACT=[["pas","Pasajeros"],["ges","Gestión coordinada"],["per","Uso personal"]];
 const ACC_LBL={car:"Carro",san:"Santiago",les:"Lester",osv:"Osvaldito · préstamo"};
 const UID=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
@@ -138,32 +176,57 @@ const $=s=>document.querySelector(s);
 const v=i=>document.getElementById(i).value;
 const N=(x,d=0)=>(+x||0).toLocaleString("es",{minimumFractionDigits:d,maximumFractionDigits:d});
 const E=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
-let S,me=null,tab="dash",q="",armed="",qm=today().slice(0,7),qh=+today().slice(8)<=15?1:2;
+let S,me=null,sel=null,tab="dash",q="",armed="",qm=today().slice(0,7),qh=+today().slice(8)<=15?1:2;
 
 function seed(){
   return{
-    cfg:{rate:860,loanPct:50,loanOn:true,wa:"5354065166",shares:[{id:"car",n:"Carro",pct:30},{id:"san",n:"Santiago",pct:50},{id:"les",n:"Lester",pct:20}]},
+    cfg:{rate:860,loanPct:50,loanOn:true,wa:"5354065166",
+      shares:[{id:"car",n:"Carro",pct:30},{id:"san",n:"Santiago",pct:50},{id:"les",n:"Lester",pct:20}]},
     users:[{u:"lester",p:"Lester2026",role:"admin",n:"Lester"},{u:"santiago",p:"Santi2026",role:"rep",n:"Santiago"}],
-    trips:[],fuel:[],inv:[],lexp:[],orders:[],caja:[],dist:[],log:[]
+    trips:[],fuel:[],inv:[],lexp:[],orders:[],caja:[],dist:[],log:[],
+    rates:[{id:UID(),d:today(),t:now(),rate:860,by:"Sistema",note:"Tasa inicial"}],
+    exchanges:[],pendingCUP:[]
   };
 }
-try{S=JSON.parse(localStorage.getItem(KEY));const u=sessionStorage.getItem("u");if(u&&S)me=S.users.find(x=>x.u==u)}catch(e){}
+try{
+  S=JSON.parse(localStorage.getItem(KEY));
+  if(!S)for(const k of OLD){const o=localStorage.getItem(k);if(o){S=JSON.parse(o);break}}
+  const u=sessionStorage.getItem("u");if(u&&S)me=S.users.find(x=>x.u==u);
+}catch(e){}
 if(!S)S=seed();
+S.rates=S.rates||[];S.exchanges=S.exchanges||[];S.pendingCUP=S.pendingCUP||[];
+S.cfg=S.cfg||{};S.cfg.rate=+S.cfg.rate||860;
+(S.dist||[]).forEach(d=>{if(d.payUsd==null)d.payUsd=(+d.payCup||0)/(+d.rate||S.cfg.rate)});
+(S.caja||[]).forEach(c=>{if(!c.cur){c.cur=c.acc==="osv"?"USD":"CUP";c.rate=+c.rate||S.cfg.rate}});
+(S.lexp||[]).forEach(l=>{if(l.loan&&l.loanUsd==null)l.loanUsd=l.cur==="USD"?(+l.amt||0):(+l.amt||0)/(+l.rate||S.cfg.rate);if(l.rate==null)l.rate=S.cfg.rate});
+
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){toast("Memoria llena")}};
 const toast=t=>{const e=$("#toast");e.textContent=t;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),2800)};
 const lg=(a,x)=>S.log.push({id:UID(),d:today(),t:now(),u:me.n,a,x});
 const A=()=>me&&me.role=="admin";
-const cup=r=>r.cur=="USD"?r.amt*r.rate:r.amt;
+
+/* ===== Tasas y conversiones ===== */
+const currentRate=()=>+S.cfg.rate||1;
+const rateAt=(d,t="23:59")=>{
+  const c=S.rates.filter(x=>(x.d<d)||(x.d==d&&x.t<=t)).sort((a,b)=>(a.d+a.t).localeCompare(b.d+b.t));
+  return c.length?c[c.length-1].rate:S.cfg.rate;
+};
+const usdEq=(cupAmt,rate=currentRate())=>(+cupAmt||0)/(+rate||1);
+const cupEq=(usdAmt,rate=currentRate())=>(+usdAmt||0)*(+rate||1);
+const cup=r=>r.cur=="USD"?(+r.amt||0)*(+r.rate||currentRate()):(+r.amt||0);
 const sum=a=>a.reduce((s,r)=>s+cup(r),0);
 const sn=id=>ACC_LBL[id]||(S.cfg.shares.find(s=>s.id==id)||{n:id}).n;
 
-/* ===== Préstamo OSVALDITO (USD) ===== */
-const loanTot=()=>{
-  const invT=S.inv.filter(i=>i.loan).reduce((s,i)=>s+i.amt,0);
-  const lexpT=S.lexp.filter(l=>l.loan).reduce((s,l)=>s+(l.amt/(l.rate||S.cfg.rate)),0);
-  return invT+lexpT;
-};
-const loanPaid=()=>S.dist.reduce((s,d)=>s+(d.payUsd||0),0);
+/* ===== Helpers de dinero con equivalente ===== */
+const mCUP=(c,r=currentRate())=>`<span class="money"><span class="m-cup">${N(c)} CUP</span><span class="m-usd">≈ USD ${N(usdEq(c,r),2)}</span></span>`;
+const mUSD=(u,r=currentRate())=>`<span class="money"><span class="m-cup">USD ${N(u,2)}</span><span class="m-usd">≈ ${N(cupEq(u,r))} CUP</span></span>`;
+const tCUP=(c,r=currentRate())=>`${N(c)} CUP<br><small class="mu">≈ USD ${N(usdEq(c,r),2)}</small>`;
+const tUSD=(u,r=currentRate())=>`USD ${N(u,2)}<br><small class="mu">≈ ${N(cupEq(u,r))} CUP</small>`;
+
+/* ===== Préstamo Osvaldito (USD) ===== */
+const loanTot=()=>S.inv.filter(i=>i.loan).reduce((s,i)=>s+(+i.amt||0),0)
+  + S.lexp.filter(l=>l.loan).reduce((s,l)=>s+(+l.loanUsd||0),0);
+const loanPaid=()=>S.dist.reduce((s,d)=>s+(d.payUsd!=null?d.payUsd:((d.payCup||0)/(d.rate||S.cfg.rate))),0);
 const loanPend=()=>Math.max(loanTot()-loanPaid(),0);
 const cr=(a,u)=>S.caja.filter(c=>c.kind=="c"&&c.acc==a&&(!u||c.d<=u)).reduce((s,c)=>s+c.amt,0);
 const rt=(a,u,f)=>S.caja.filter(c=>c.kind=="r"&&c.acc==a&&(!u||c.d<=u)&&(!f||c.d>=f)).reduce((s,c)=>s+c.amt,0);
@@ -176,19 +239,17 @@ function cc(d,litN){
   const litT=F.reduce((s,r)=>s+r.lit,0);
   const imp=sum(F);
   let pl=0;
-  if(litT>0){pl=imp/litT}
+  if(litT>0)pl=imp/litT;
   else{const last=S.fuel.filter(r=>r.d<=d&&r.lit).sort((a,b)=>a.d>b.d?1:-1).pop();if(last)pl=last.precio||(cup(last)/last.lit)}
   if(!pl||pl<=0)pl=600;
-  const fN=litN*pl;
-  const litO=Math.max(litT-litN,0);
-  const fO=litO*pl;
-  const c=S.cfg;
+  const fN=litN*pl, litO=Math.max(litT-litN,0), fO=litO*pl;
+  const rate=rateAt(d,now());
   const Nt=I-fN;
-  const payCup=c.loanOn&&Nt>0?Math.min(Nt*c.loanPct/100,loanPend()*c.rate):0;
+  const payCup=S.cfg.loanOn&&Nt>0?Math.min(Nt*S.cfg.loanPct/100,loanPend()*rate):0;
   const rest=Nt>0?Nt-payCup:0;
   const sh={};
-  c.shares.forEach(s=>sh[s.id]=Nt>0?rest*s.pct/100:0);
-  return{I,litT,imp,pl,litN,fN,litO,fO,Nt,payCup,payUsd:payCup/c.rate,rest,sh};
+  S.cfg.shares.forEach(s=>sh[s.id]=Nt>0?rest*s.pct/100:0);
+  return{I,litT,imp,pl,litN,fN,litO,fO,Nt,payCup,payUsd:payCup/rate,rate,rest,sh};
 }
 const qk=d=>d.slice(0,7)+"-"+(+d.slice(8)<=15?1:2);
 const mn=m=>new Date(+m.slice(0,4),+m.slice(5,7)-1,1).toLocaleString("es",{month:"long",year:"numeric"});
@@ -201,7 +262,7 @@ const MOD={
   trips:{t:"Viajes y paquetería",f:[D,H,["act","act","Actividad"],["from","text","Origen"],["to","text","Destino"],AM,CU,["desc","text","Descripción"]],req:["amt"],m:1},
   fuel:{t:"Combustible comprado",f:[D,H,["lit","number","Litros"],["precio","number","Precio CUP/L"],["amt","number","Importe total"],CU,["note","text","Notas"]],req:["lit","precio"],m:1,x:["ppl"]},
   inv:{t:"Inversiones (préstamo Osvaldito, USD)",f:[D,["what","text","Concepto"],["amt","number","Monto USD"],["loan","loan","¿Préstamo?"]],req:["what","amt"],fix:{cur:"USD"},m:1},
-  lexp:{t:"Gastos de Lester (compras enviadas a Santiago)",f:[D,["what","text","Concepto"],["amt","number","Monto CUP"],["loan","loan","¿Es parte del préstamo Osvaldito?"],["note","text","Notas"]],req:["what","amt"],m:1}
+  lexp:{t:"Gastos de Lester (compras enviadas a Santiago)",f:[D,["what","text","Concepto"],["amt","number","Importe de compra"],["cur","cur","Moneda del gasto"],["loan","loan","¿Se incorpora al préstamo Osvaldito?"],["note","text","Notas"]],req:["what","amt"],m:1}
 };
 const inp=(k,f)=>{
   const[key,ty,lb]=f,id=`f_${k}_${key}`,w=key=="desc"?` id="wdesc" style="display:none"`:"";
@@ -212,83 +273,140 @@ const inp=(k,f)=>{
 const cell=(r,key)=>{
   if(key=="act")return E((ACT.find(a=>a[0]==r.act)||["","?"])[1]);
   if(key=="loan")return r.loan?"Sí":"No";
-  if(key=="cup")return N(cup(r));
+  if(key=="cup"){const rate=r.rate||currentRate();return r.cur=="USD"?tUSD(r.amt,rate):tCUP(r.amt,rate)}
   if(key=="ppl")return N(cup(r)/r.lit,2);
-  if(key=="amt")return N(r.amt,2);
+  if(key=="amt"){if(r.cur=="USD")return tUSD(r.amt,r.rate||currentRate());return tCUP(r.amt,r.rate||currentRate())}
   return E(r[key]);
 };
 function mod(k,extra=""){
   const M=MOD[k],cols=[...M.f.map(f=>f[0]),...(M.m?["cup"]:[]),...(M.x||[]),"by"];
-  const lab={cup:"CUP",by:"Por",ppl:"CUP/L"};
+  const lab={cup:"CUP / USD eq.",by:"Por",ppl:"CUP/L"};
   const rows=[...S[k]].reverse().filter(r=>!q||JSON.stringify(r).toLowerCase().includes(q.toLowerCase()));
   return`${extra}<div class="card"><h3><span class="ico">✚</span>${M.t}</h3><div class="row">${M.f.map(f=>inp(k,f)).join("")}<button class="pr" data-add="${k}">Registrar</button></div></div>
-  <div class="card"><input id="q" placeholder="🔍 Buscar..." value="${E(q)}"><div class="tw"><table><tr>${cols.map(c=>`<th>${lab[c]||(M.f.find(f=>f[0]==c)||[])[2]}</th>`).join("")}<th></th></tr>${rows.map(r=>`<tr>${cols.map(c=>`<td>${cell(r,c)}</td>`).join("")}<td>${A()?`<button class="dg" data-del="${k}|${r.id}">${armed==k+r.id?"¿Seguro?":"✕"}</button>`:""}</td></tr>`).join("")||"<tr><td colspan='99' class='mu' style='text-align:center;padding:20px'>Sin registros</td></tr>"}</table></div><p class="mu" style="margin-top:10px">Total CUP${k=="fuel"?" y litros":""}: <b>${N(sum(rows))}</b>${k=="fuel"?` · ${N(rows.reduce((s,r)=>s+r.lit,0),1)} L`:""}</p></div>`;
+  <div class="card"><input id="q" placeholder="🔍 Buscar..." value="${E(q)}"><div class="tw"><table><tr>${cols.map(c=>`<th>${lab[c]||(M.f.find(f=>f[0]==c)||[])[2]}</th>`).join("")}<th></th></tr>${rows.map(r=>`<tr>${cols.map(c=>`<td>${cell(r,c)}</td>`).join("")}<td>${A()?`<button class="dg" data-del="${k}|${r.id}">${armed==k+r.id?"¿Seguro?":"✕"}</button>`:""}</td></tr>`).join("")||"<tr><td colspan='99' class='mu' style='text-align:center;padding:22px'>Sin registros</td></tr>"}</table></div><p class="mu" style="margin-top:10px">Total CUP${k=="fuel"?" y litros":""}: <b>${N(sum(rows))}</b> · ≈ USD ${N(usdEq(sum(rows)),2)}${k=="fuel"?` · ${N(rows.reduce((s,r)=>s+r.lit,0),1)} L`:""}</p></div>`;
 }
 
 /* ===== Vistas ===== */
-const kp=(l,x,c="")=>`<div class="k"><small>${l}</small><b class="${c}">${x}</b></div>`;
+const kp=(l,x,c="")=>`<div class="k"><small>${l}</small><div class="k-val ${c}">${x}</div></div>`;
 const ico=(p)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;stroke-width:2"><path d="${p}"/></svg>`;
 
-function hero(){return`<section class="hero"><h1>Alianza <em>entre amigos</em></h1><p>SANTIAGO Y LESTER</p><svg viewBox="0 0 560 110"><rect y="88" width="560" height="22" fill="#0f172a" rx="4"/><path d="M0 99h560" stroke="#fff" stroke-dasharray="24 14" stroke-width="3"/><path d="M180 88V66l22-22h80l28 22h36v22z" fill="#fbbf24"/><path d="M208 66l14-16h44l18 16z" fill="#bfe6ff"/><circle cx="218" cy="89" r="14" fill="#0f172a" stroke="#fff" stroke-width="3.5"/><circle cx="318" cy="89" r="14" fill="#0f172a" stroke="#fff" stroke-width="3.5"/><text x="44" y="82" font-size="38">🧑‍🔧</text><text x="450" y="82" font-size="38">🧑‍💼</text></svg></section>`}
+function hero(){return`<section class="hero"><h1>Alianza <em>entre amigos</em></h1><p>SANTIAGO Y LESTER</p><svg viewBox="0 0 560 110"><rect y="88" width="560" height="22" fill="#0f172a" rx="4"/><path d="M0 99h560" stroke="#fff" stroke-dasharray="24 14" stroke-width="3"/><path d="M180 88V66l22-22h80l28 22h36v22z" fill="#fb923c"/><path d="M208 66l14-16h44l18 16z" fill="#bfe6ff"/><circle cx="218" cy="89" r="14" fill="#0f172a" stroke="#fff" stroke-width="3.5"/><circle cx="318" cy="89" r="14" fill="#0f172a" stroke="#fff" stroke-width="3.5"/><text x="44" y="82" font-size="38">🧑‍🔧</text><text x="450" y="82" font-size="38">🧑‍💼</text></svg></section>`}
 
 function dash(){
   const f=qm+"-"+(qh==1?"01":"16"),t=qm+"-"+(qh==1?"15":"31");
   const Q=S.dist.filter(x=>x.d>=f&&x.d<=t);
   const sm=k=>Q.reduce((s,x)=>s+(x[k]||0),0);
   const sh=id=>Q.reduce((s,x)=>s+(x.sh[id]||0),0);
-  const r=S.cfg.rate,pr=loanTot()?loanPaid()/loanTot()*100:0;
+  const r=currentRate(),pr=loanTot()?loanPaid()/loanTot()*100:0;
   const ent=a=>rt(a,t,f),pen=a=>bal(a,t);
   const keys=[...new Set(S.dist.map(x=>qk(x.d)))].sort().reverse();
   return`${hero()}<main>
-  <div class="card" style="text-align:center"><h3 style="justify-content:center"><span class="ico">📖</span>Manual de uso para Santiago</h3><p class="mu" style="margin-bottom:10px">Escrito por Lester para ti. Aquí está todo lo que necesitas saber, paso a paso.</p><button class="pr" data-t="manual">Abrir manual de uso</button></div>
-  <div class="card"><h3><span class="ico">💱</span>Tasa de cambio CUP/USD</h3><div class="row"><div style="flex:1"><label>CUP por 1 USD (cualquiera puede editarla)</label><input type="number" data-cf="rate" value="${r}" min="1"></div></div><p class="mu">Usa la tasa del día. Afecta conversiones del préstamo y gastos.</p></div>
-  <div class="card"><h3><span class="ico">🏦</span>Préstamo de Osvaldito</h3><div class="bar"><i style="width:${Math.min(pr,100)}%"></i></div><p class="mu" style="margin-bottom:8px">${N(pr,1)}% recuperado · ${N(loanPaid(),2)} de ${N(loanTot(),2)} USD</p><div class="grid">${kp("Total USD",N(loanTot(),2))}${kp("Recuperado USD",N(loanPaid(),2),"pos")}${kp("Pendiente USD",N(loanPend(),2),"neg")}${kp("Pendiente CUP",N(loanPend()*r))}</div></div>
-  <div class="card"><h3><span class="ico">📅</span>Quincena</h3><div class="row"><div><label>Mes</label><input type="month" id="qm" value="${qm}"></div><div><label>Quincena</label><select id="qh"><option value="1" ${qh==1?"selected":""}>1ª (1-15)</option><option value="2" ${qh==2?"selected":""}>2ª (16-fin)</option></select></div></div><p class="mu">${ql(qm+"-"+qh)} · solo días cerrados</p><div class="grid">${kp("Ingresos",N(sm("I")))}${kp("Combustible neg.",N(sm("fN")))}${kp("Neta",N(sm("Nt")),"pos")}${kp("Pagado Osvaldito CUP",N(sm("payCup")))}${kp("Pagado Osvaldito USD",N(sm("payUsd"),2))}${kp("Otros (Santiago)",N(sm("fO")))}</div><p style="margin:10px 0 6px;font-weight:600;font-size:.85rem">Reparto por socio</p><div class="grid">${S.cfg.shares.map(s=>kp(s.n,N(sh(s.id)))).join("")}</div></div>
-  <div class="card"><h3><span class="ico">💼</span>Lester: entregas y pendientes</h3><div class="grid">${kp("Entregado a Osvaldito",N(ent("osv")))}${kp("Entregado a Lester",N(ent("les")))}${kp("Pend. Osvaldito",N(pen("osv")),"neg")}${kp("Pend. Lester",N(pen("les")),"neg")}${kp("Pend. total",N(pen("osv")+pen("les")),"neg")}</div></div>
-  <div class="card"><h3><span class="ico">📊</span>Acumulado total</h3><div class="grid">${kp("Ingresos",N(S.dist.reduce((s,x)=>s+x.I,0)))}${kp("Neta",N(S.dist.reduce((s,x)=>s+x.Nt,0)),"pos")}${S.cfg.shares.map(s=>kp(s.n+" caja",N(bal(s.id)))).join("")}</div></div>
-  <div class="card"><h3><span class="ico">🗓️</span>Historial por quincena</h3><div class="tw"><table><tr><th>Quincena</th><th>Ingresos</th><th>Neta</th><th>Osvaldito</th>${S.cfg.shares.map(s=>`<th>${s.n}</th>`).join("")}</tr>${keys.map(k=>{const L=S.dist.filter(x=>qk(x.d)==k),g=z=>L.reduce((s,x)=>s+(x[z]||0),0);return`<tr class="${k==qm+"-"+qh?"sel":""}" data-q="${k}" style="cursor:pointer"><td>${ql(k)}</td><td>${N(g("I"))}</td><td>${N(g("Nt"))}</td><td>${N(g("payCup"))}</td>${S.cfg.shares.map(s=>`<td>${N(L.reduce((a,x)=>a+(x.sh[s.id]||0),0))}</td>`).join("")}</tr>`}).join("")||"<tr><td colspan='99' class='mu' style='text-align:center;padding:14px'>Aún no hay días cerrados</td></tr>"}</table></div></div></main>`;
+  <div class="card" style="text-align:center"><h3 style="justify-content:center"><span class="ico">📖</span>Manual de uso para Santiago</h3><p class="mu" style="margin-bottom:12px">Escrito por Lester para ti. Todo lo que necesitas saber, paso a paso.</p><button class="pr" data-t="manual">Abrir manual</button></div>
+  <div class="card"><h3><span class="ico">💱</span>Tasa de cambio CUP/USD</h3>
+    <div class="row"><div style="flex:1"><label>Nueva tasa (CUP por 1 USD)</label><input id="rate" type="number" value="${r}" min="1" step="0.01"></div></div>
+    <div class="row"><div><label>Nota / fuente</label><input id="rateNote" placeholder="Ej.: tasa del día, acuerdo"></div><button class="pr" data-rate-save="1">Registrar tasa</button></div>
+    <p class="mu">Se guarda con fecha/hora. Cada operación conserva la tasa de su momento. No cambia tasas históricas.</p>
+    <div class="tw" style="margin-top:12px"><table><tr><th>Fecha</th><th>Hora</th><th>CUP/USD</th><th>Registró</th><th>Nota</th></tr>${[...S.rates].slice(-8).reverse().map(x=>`<tr><td>${x.d}</td><td>${x.t}</td><td><b>${N(x.rate,2)}</b></td><td>${E(x.by)}</td><td><small class="mu">${E(x.note||"")}</small></td></tr>`).join("")}</table></div>
+  </div>
+  <div class="card"><h3><span class="ico">🏦</span>Préstamo de Osvaldito (USD)</h3>
+    <div class="bar"><i style="width:${Math.min(pr,100)}%"></i></div>
+    <p class="mu" style="margin-bottom:10px">${N(pr,1)}% recuperado · ${N(loanPaid(),2)} de ${N(loanTot(),2)} USD</p>
+    <div class="grid">
+      ${kp("Total USD",N(loanTot(),2))}
+      ${kp("Recuperado",N(loanPaid(),2),"pos")}
+      ${kp("Pendiente USD",N(loanPend(),2),"neg")}
+      ${kp("Equiv. CUP hoy",N(cupEq(loanPend(),r)))}
+    </div>
+  </div>
+  <div class="card"><h3><span class="ico">📅</span>Quincena</h3><div class="row"><div><label>Mes</label><input type="month" id="qm" value="${qm}"></div><div><label>Quincena</label><select id="qh"><option value="1" ${qh==1?"selected":""}>1ª (1-15)</option><option value="2" ${qh==2?"selected":""}>2ª (16-fin)</option></select></div></div><p class="mu">${ql(qm+"-"+qh)} · solo días cerrados</p>
+  <div class="grid">${kp("Ingresos",mCUP(sm("I"),r))}${kp("Combustible negocio",mCUP(sm("fN"),r))}${kp("Ganancia neta",mCUP(sm("Nt"),r),"pos")}${kp("Abono Osvaldito",mUSD(sm("payUsd"),r))}${kp("Combustible otros",mCUP(sm("fO"),r))}</div>
+  <p style="margin:12px 0 8px;font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.5px;color:var(--mu)">Reparto por socio</p>
+  <div class="grid">${S.cfg.shares.map(s=>kp(s.n,mCUP(sh(s.id),r))).join("")}</div>
+  </div>
+  <div class="card"><h3><span class="ico">💼</span>Lester: entregas y pendientes</h3>
+    <div class="grid">${kp("Entregado Osvaldito",mUSD(ent("osv"),r))}${kp("Entregado Lester",mCUP(ent("les"),r))}${kp("Pend. Osvaldito USD",mUSD(loanPend(),r),"neg")}${kp("Pend. Lester",mCUP(pen("les"),r),"neg")}</div>
+  </div>
+  <div class="card"><h3><span class="ico">📊</span>Acumulado total</h3>
+    <div class="grid">${kp("Ingresos",mCUP(S.dist.reduce((s,x)=>s+x.I,0),r))}${kp("Neta",mCUP(S.dist.reduce((s,x)=>s+x.Nt,0),r),"pos")}${S.cfg.shares.map(s=>kp(s.n+" caja",mCUP(bal(s.id),r))).join("")}</div>
+  </div>
+  <div class="card"><h3><span class="ico">🗓️</span>Historial por quincena</h3>
+    <div class="tw"><table><tr><th>Quincena</th><th>Ingresos</th><th>Neta</th><th>Osvaldito</th>${S.cfg.shares.map(s=>`<th>${s.n}</th>`).join("")}</tr>${keys.map(k=>{const L=S.dist.filter(x=>qk(x.d)==k),g=z=>L.reduce((s,x)=>s+(x[z]||0),0);return`<tr class="${k==qm+"-"+qh?"sel":""}" data-q="${k}" style="cursor:pointer"><td>${ql(k)}</td><td>${tCUP(g("I"),r)}</td><td>${tCUP(g("Nt"),r)}</td><td>${tUSD(g("payUsd"),r)}</td>${S.cfg.shares.map(s=>`<td>${N(L.reduce((a,x)=>a+(x.sh[s.id]||0),0))}</td>`).join("")}</tr>`}).join("")||"<tr><td colspan='99' class='mu' style='text-align:center;padding:22px'>Aún no hay días cerrados</td></tr>"}</table></div>
+  </div>
+  </main>`;
 }
 
 function cierre(){
   const d=$("#cd")?v("cd"):today(),b=cc(d,0),L=$("#cl")&&v("cl")!==""?+v("cl"):b.litT,c=cc(d,L),done=S.dist.some(x=>x.d==d);
-  return`<main><div class="card"><h3><span class="ico">✓</span>Cierre del día</h3><p class="mu">Declara cuánto del combustible se usó en el negocio. El resto lo asume Santiago.</p><div class="row"><div><label>Día</label><input id="cd" type="date" value="${d}"></div><div><label>Litros usados (de ${N(b.litT,1)} L)</label><input id="cl" type="number" step="any" min="0" value="${L}"></div></div><div class="row"><button class="pr" data-close="1" ${done?"disabled":""}>${done?"Día cerrado":"Cerrar día"}</button><button class="wa" data-wadian="1">📤 Salva + WhatsApp</button></div>
-  <div class="grid">${kp("Ingresos",N(c.I))}${kp("Precio/L",N(c.pl,2))}${kp("Comb. negocio",N(c.fN))}${kp("Comb. otros",N(c.fO))}${kp("Neta",N(c.Nt),c.Nt<0?"neg":"pos")}${kp("A Osvaldito",N(c.payCup))}</div>${S.cfg.shares.map(s=>`<p style="margin:6px 0;font-size:.9rem">${s.n}: <b>${N(c.sh[s.id]||0)} CUP</b></p>`).join("")}</div>
-  <div class="card"><h3><span class="ico">📋</span>Días cerrados</h3><div class="tw"><table><tr><th>Fecha</th><th>Neta</th><th>Osvaldito</th>${S.cfg.shares.map(s=>`<th>${s.n}</th>`).join("")}<th>Por</th><th></th></tr>${[...S.dist].reverse().map(x=>`<tr><td>${x.d}</td><td>${N(x.Nt)}</td><td>${N(x.payCup)}</td>${S.cfg.shares.map(s=>`<td>${N(x.sh[s.id]||0)}</td>`).join("")}<td>${E(x.by)}</td><td>${A()?`<button class="dg" data-del="dist|${x.id}">${armed=="dist"+x.id?"¿Seguro?":"✕"}</button>`:""}</td></tr>`).join("")||"<tr><td colspan='99' class='mu' style='text-align:center;padding:14px'>Sin cierres</td></tr>"}</table></div></div></main>`;
+  return`<main><div class="card"><h3><span class="ico">✓</span>Cierre del día</h3><p class="mu">Declara cuánto del combustible se usó en el negocio. El resto lo asume Santiago.</p>
+  <div class="row"><div><label>Día</label><input id="cd" type="date" value="${d}"></div><div><label>Litros usados (de ${N(b.litT,1)} L)</label><input id="cl" type="number" step="any" min="0" value="${L}"></div></div>
+  <div class="row"><button class="pr" data-close="1" ${done?"disabled":""}>${done?"Día cerrado":"Cerrar día"}</button><button class="wa" data-wadian="1">📤 Salva + WhatsApp</button></div>
+  <div class="grid">${kp("Ingresos",mCUP(c.I,c.rate))}${kp("Precio/L",N(c.pl,2)+" CUP")}${kp("Comb. negocio",mCUP(c.fN,c.rate))}${kp("Comb. otros",mCUP(c.fO,c.rate))}${kp("Neta",mCUP(c.Nt,c.rate),c.Nt<0?"neg":"pos")}${kp("Abono Osvaldito",mUSD(c.payUsd,c.rate))}</div>
+  <p class="mu" style="margin-top:6px">Tasa aplicada al cierre: <b>${N(c.rate,2)} CUP/USD</b></p>
+  ${S.cfg.shares.map(s=>`<p style="margin:8px 0;font-size:.95rem">${s.n}: <b>${mCUP(c.sh[s.id]||0,c.rate)}</b></p>`).join("")}</div>
+  <div class="card"><h3><span class="ico">📋</span>Días cerrados</h3><div class="tw"><table><tr><th>Fecha</th><th>Neta</th><th>Osvaldito</th><th>Tasa</th>${S.cfg.shares.map(s=>`<th>${s.n}</th>`).join("")}<th>Por</th><th></th></tr>${[...S.dist].reverse().map(x=>`<tr><td>${x.d}</td><td>${tCUP(x.Nt,x.rate)}</td><td>${tUSD(x.payUsd,x.rate)}</td><td>${N(x.rate||currentRate(),2)}</td>${S.cfg.shares.map(s=>`<td>${N(x.sh[s.id]||0)}</td>`).join("")}<td><small class="mu">${E(x.by)}</small></td><td>${A()?`<button class="dg" data-del="dist|${x.id}">${armed=="dist"+x.id?"¿Seguro?":"✕"}</button>`:""}</td></tr>`).join("")||"<tr><td colspan='99' class='mu' style='text-align:center;padding:22px'>Sin cierres</td></tr>"}</table></div></div></main>`;
 }
 
 function caja(){
   const accs=["car","san","les","osv"];
   const f=$("#cf")?v("cf"):"";
   const L=[...S.caja].reverse().filter(c=>(!f||c.acc==f)&&(!q||JSON.stringify(c).toLowerCase().includes(q.toLowerCase())));
-  return`<main><div class="card"><h3><span class="ico">💰</span>Saldos por cuenta</h3><div class="tw"><table><tr><th>Cuenta</th><th>Le corresponde</th><th>Retirado</th><th>Disponible</th></tr>${accs.map(a=>`<tr><td>${sn(a)}</td><td>${N(cr(a))}</td><td>${N(rt(a))}</td><td><b>${N(bal(a))}</b></td></tr>`).join("")}<tr><td><b>Lester total</b></td><td>${N(cr("les")+cr("osv"))}</td><td>${N(rt("les")+rt("osv"))}</td><td><b>${N(bal("les")+bal("osv"))}</b></td></tr></table></div></div>
-  <div class="card"><h3><span class="ico">📤</span>Registrar entrega / retiro</h3><p class="mu">Entrega de dinero a Lester u Osvaldito, o uso del saldo (compras, reparaciones).</p><div class="row"><div><label>Cuenta</label><select id="ra">${accs.map(a=>`<option value="${a}">${sn(a)}</option>`).join("")}</select></div><div><label>Fecha</label><input id="rd" type="date" value="${today()}"></div></div><div class="row"><div style="flex:2"><label>Concepto</label><input id="rc" placeholder="Ej.: entrega a Osvaldito, compra de piezas..."></div><div><label>Monto CUP</label><input id="rm" type="number" step="any" min="0"></div></div><button class="pr" data-ret="1">Registrar</button></div>
-  <div class="card"><h3><span class="ico">📜</span>Historial</h3><div class="row"><div><label>Cuenta</label><select id="cf"><option value="">Todas</option>${accs.map(a=>`<option value="${a}" ${f==a?"selected":""}>${sn(a)}</option>`).join("")}</select></div><input id="q" placeholder="🔍 Buscar..." value="${E(q)}"></div><div class="tw"><table><tr><th>Fecha</th><th>Cuenta</th><th>Op.</th><th>Concepto</th><th>Entra</th><th>Sale</th><th>Por</th><th></th></tr>${L.map(c=>`<tr><td>${c.d}</td><td>${sn(c.acc)}</td><td>${c.kind=="c"?"Reparto":"Retiro"}</td><td>${E(c.concept)}</td><td class="pos">${c.kind=="c"?N(c.amt):""}</td><td class="neg">${c.kind=="r"?N(c.amt):""}</td><td>${E(c.by)}</td><td>${A()&&!c.auto?`<button class="dg" data-del="caja|${c.id}">${armed=="caja"+c.id?"¿Seguro?":"✕"}</button>`:""}</td></tr>`).join("")||"<tr><td colspan='99' class='mu' style='text-align:center;padding:14px'>Sin movimientos</td></tr>"}</table></div></div></main>`;
+  return`<main><div class="card"><h3><span class="ico">💰</span>Saldos por cuenta</h3><div class="tw"><table><tr><th>Cuenta</th><th>Le corresponde</th><th>Retirado</th><th>Disponible</th></tr>${accs.map(a=>{const isUSD=a=="osv";return`<tr><td>${sn(a)}</td><td>${isUSD?tUSD(cr(a)):tCUP(cr(a))}</td><td>${isUSD?tUSD(rt(a)):tCUP(rt(a))}</td><td><b>${isUSD?tUSD(bal(a)):tCUP(bal(a))}</b></td></tr>`}).join("")}<tr><td><b>Lester total (CUP)</b></td><td>${tCUP(cr("les"))}</td><td>${tCUP(rt("les"))}</td><td><b>${tCUP(bal("les"))}</b></td></tr></table></div></div>
+  <div class="card"><h3><span class="ico">📤</span>Registrar entrega / retiro</h3><p class="mu">Entrega a Lester u Osvaldito, o uso del saldo (compras, reparaciones).</p>
+  <div class="row"><div><label>Cuenta</label><select id="ra">${accs.map(a=>`<option value="${a}">${sn(a)}</option>`).join("")}</select></div><div><label>Fecha</label><input id="rd" type="date" value="${today()}"></div></div>
+  <div class="row"><div style="flex:2"><label>Concepto</label><input id="rc" placeholder="Ej.: compra de piezas"></div><div><label id="rmLabel">Monto CUP</label><input id="rm" type="number" step="any" min="0"></div></div>
+  <button class="pr" data-ret="1">Registrar</button></div>
+  <div class="card"><h3><span class="ico">📜</span>Historial</h3><div class="row"><div><label>Cuenta</label><select id="cf"><option value="">Todas</option>${accs.map(a=>`<option value="${a}" ${f==a?"selected":""}>${sn(a)}</option>`).join("")}</select></div><input id="q" placeholder="🔍 Buscar..." value="${E(q)}"></div>
+  <div class="tw"><table><tr><th>Fecha</th><th>Cuenta</th><th>Op.</th><th>Concepto</th><th>Entra</th><th>Sale</th><th>Tasa</th><th></th></tr>${L.map(c=>{const isUSD=c.acc=="osv";return`<tr><td>${c.d}</td><td>${sn(c.acc)}</td><td>${c.kind=="c"?"Reparto":"Retiro"}</td><td>${E(c.concept)}</td><td class="pos">${c.kind=="c"?(isUSD?tUSD(c.amt,c.rate):tCUP(c.amt,c.rate)):""}</td><td class="neg">${c.kind=="r"?(isUSD?tUSD(c.amt,c.rate):tCUP(c.amt,c.rate)):""}</td><td><small class="mu">${N(c.rate||currentRate(),2)}</small></td><td>${A()&&!c.auto?`<button class="dg" data-del="caja|${c.id}">${armed=="caja"+c.id?"¿Seguro?":"✕"}</button>`:""}</td></tr>`}).join("")||"<tr><td colspan='99' class='mu' style='text-align:center;padding:22px'>Sin movimientos</td></tr>"}</table></div></div></main>`;
 }
 
-const inv=()=>`<main>${mod("inv",`<div class="card"><h3><span class="ico">🏦</span>Préstamo de Osvaldito</h3><p>Total USD <b>${N(loanTot(),2)}</b> · Recuperado USD <b class="pos">${N(loanPaid(),2)}</b> · Pendiente <b class="neg">USD ${N(loanPend(),2)}</b> = ${N(loanPend()*S.cfg.rate)} CUP (tasa ${S.cfg.rate})</p><p class="mu" style="margin-top:8px">El préstamo puede crecer: registra nuevas inversiones con "¿Préstamo? = Sí".</p></div>`)}</main>`;
+const inv=()=>`<main>${mod("inv",`<div class="card"><h3><span class="ico">🏦</span>Préstamo de Osvaldito</h3><p style="margin-bottom:8px">${mUSD(loanTot())} total · ${mUSD(loanPaid())} recuperado · <b class="neg">${mUSD(loanPend())} pendiente</b></p><p class="mu">El préstamo puede crecer: registra nuevas inversiones con "¿Préstamo? = Sí". Cada nueva inversión se suma al total en USD.</p></div>`)}</main>`;
 
 function orders(){
   const list=[...S.orders].reverse().filter(r=>!q||JSON.stringify(r).toLowerCase().includes(q.toLowerCase()));
-  return`<main><div class="card"><h3><span class="ico">📨</span>Pedidos de Lester</h3><p class="mu">Lester deja pedidos desde su saldo (Lester) o desde el pendiente de Osvaldito. Al importarlos en tu app aparecen aquí. Márcalos como "Usados" cuando los cumplas: se registra el retiro automáticamente.</p><div class="row"><div><label>Cuenta</label><select id="oa"><option value="les">Lester · ganancia</option><option value="osv">Osvaldito · préstamo</option></select></div><div><label>Concepto</label><input id="oc" placeholder="Qué comprar / para qué usar"></div></div><div class="row"><div><label>Monto</label><input id="om" type="number" step="any" min="0"></div><div><label>Moneda</label><select id="ocur"><option value="CUP">CUP</option><option value="USD">USD</option></select></div><button class="pr" data-addorder="1">Crear pedido</button></div></div>
-  <div class="card"><input id="q" placeholder="🔍 Buscar..." value="${E(q)}"><div class="tw"><table><tr><th>Fecha</th><th>Cuenta</th><th>Concepto</th><th>Monto</th><th>Estado</th><th></th></tr>${list.map(o=>`<tr><td>${o.d}</td><td>${sn(o.acc)}</td><td>${E(o.concept)}</td><td>${N(o.amt,2)} ${o.cur}</td><td>${o.status=="used"?`<span class="badge ok">Usado ${o.usedD||""}</span>`:`<span class="badge pri">Pendiente</span>`}</td><td>${o.status!="used"?`<button class="pr" data-useorder="${o.id}">Usar</button>`:""}</td></tr>`).join("")||"<tr><td colspan='99' class='mu' style='text-align:center;padding:14px'>Sin pedidos</td></tr>"}</table></div></div></main>`;
+  return`<main><div class="card"><h3><span class="ico">📨</span>Pedidos de Lester</h3><p class="mu">Lester deja pedidos desde su saldo o desde el pendiente de Osvaldito. Al importarlos en tu app aparecen aquí. Al marcar "Usar" se registra el retiro automático.</p>
+  <div class="row"><div><label>Cuenta</label><select id="oa"><option value="les">Lester · ganancia</option><option value="osv">Osvaldito · préstamo</option></select></div><div><label>Concepto</label><input id="oc" placeholder="Qué comprar / para qué usar"></div></div>
+  <div class="row"><div><label>Monto</label><input id="om" type="number" step="any" min="0"></div><div><label>Moneda</label><select id="ocur"><option value="CUP">CUP</option><option value="USD">USD</option></select></div><button class="pr" data-addorder="1">Crear pedido</button></div></div>
+  <div class="card"><input id="q" placeholder="🔍 Buscar..." value="${E(q)}"><div class="tw"><table><tr><th>Fecha</th><th>Cuenta</th><th>Concepto</th><th>Monto</th><th>Estado</th><th></th></tr>${list.map(o=>`<tr><td>${o.d}</td><td>${sn(o.acc)}</td><td>${E(o.concept)}</td><td>${o.cur=="USD"?tUSD(o.amt):tCUP(o.amt)}</td><td>${o.status=="used"?`<span class="badge ok">Usado ${o.usedD||""}</span>`:`<span class="badge pri">Pendiente</span>`}</td><td>${o.status!="used"?`<button class="pr" data-useorder="${o.id}">Usar</button>`:""}</td></tr>`).join("")||"<tr><td colspan='99' class='mu' style='text-align:center;padding:22px'>Sin pedidos</td></tr>"}</table></div></div></main>`;
 }
 
-const lexp=()=>`<main>${mod("lexp",`<div class="card"><h3><span class="ico">🛍️</span>Gastos de Lester</h3><p class="mu">Registra compras que Lester hizo y envió a Santiago. Si marcas "Sí, es préstamo", aumentan el total del préstamo de Osvaldito (en USD, según la tasa del momento).</p></div>`)}</main>`;
+const lexp=()=>`<main>${mod("lexp",`<div class="card"><h3><span class="ico">🛍️</span>Gastos de Lester</h3><p class="mu">Compras que Lester hizo y envió a Santiago. Si marcas "Sí, es préstamo", se suman al total del préstamo de Osvaldito (convertido a USD con la tasa del momento).</p></div>`)}</main>`;
+
+function fx(){
+  const rate=currentRate();
+  const pending=S.pendingCUP.reduce((a,x)=>a+Math.max(0,(+x.amount||0)-(+x.converted||0)),0);
+  const converted=S.exchanges.reduce((a,x)=>a+(+x.usd||0),0);
+  return`<main>
+  <div class="card"><h3><span class="ico">💱</span>Registrar cambio CUP → USD</h3>
+  <p class="mu">Cada operación guarda su propia tasa, fecha y hora. Los cambios posteriores no revalorizan operaciones ya realizadas.</p>
+  <div class="row"><div><label>Fecha</label><input id="exd" type="date" value="${today()}"></div><div><label>Hora</label><input id="ext" type="time" value="${now()}"></div></div>
+  <div class="row"><div><label>CUP entregados</label><input id="excup" type="number" min="0.01" step="0.01"></div><div><label>Tasa pactada (CUP/USD)</label><input id="exrate" type="number" min="0.01" step="0.01" value="${rate}"></div></div>
+  <div class="row"><div><label>USD brutos (auto)</label><input id="exusd" readonly></div><div><label>Comisión USD</label><input id="exfee" type="number" min="0" step="0.01" value="0"></div></div>
+  <div class="row"><div><label>Contraparte / nota</label><input id="exnote" placeholder="Quién cambió, comprobante..."></div><button class="pr" data-exchange="1">Guardar cambio</button></div>
+  <p class="mu">USD netos = CUP ÷ tasa − comisión. Introduce la tasa realmente pactada.</p></div>
+  <div class="grid">${kp("CUP pendientes de cambiar",N(pending))}${kp("Equiv. USD hoy",N(usdEq(pending,rate),2))}${kp("USD recibidos acumulados",N(converted,2))}</div>
+  <div class="card"><h3><span class="ico">🧾</span>Control CUP por cambiar</h3><p class="mu">Reserva CUP para convertir. El equivalente USD se recalcula a la tasa actual; el importe CUP pendiente permanece fijo.</p>
+  <div class="row"><div><label>Concepto / origen</label><input id="pcnote" placeholder="Ej.: caja destinada a compra en USD"></div><div><label>CUP a cambiar</label><input id="pcamt" type="number" min="0.01" step="0.01"></div><button class="pr" data-pending-add="1">Añadir</button></div>
+  <div class="tw"><table><tr><th>Fecha</th><th>Concepto</th><th>Asignado</th><th>Convertido</th><th>Pendiente</th><th>USD eq. hoy</th></tr>${S.pendingCUP.map(x=>{const p=Math.max(0,x.amount-(x.converted||0));return`<tr><td>${x.d}</td><td>${E(x.note)}</td><td>${N(x.amount)}</td><td>${N(x.converted||0)}</td><td><b>${N(p)}</b></td><td><b>USD ${N(usdEq(p,rate),2)}</b></td></tr>`}).join("")||"<tr><td colspan='6' class='mu' style='text-align:center;padding:22px'>Sin CUP pendientes</td></tr>"}</table></div></div>
+  <div class="card"><h3><span class="ico">📚</span>Histórico de cambios</h3><div class="tw"><table><tr><th>Fecha</th><th>Hora</th><th>CUP</th><th>Tasa</th><th>USD bruto</th><th>Comisión</th><th>USD neto</th><th>Nota</th></tr>${[...S.exchanges].reverse().map(x=>`<tr><td>${x.d}</td><td>${x.t}</td><td>${N(x.cup)}</td><td><b>${N(x.rate,2)}</b></td><td>${N(x.grossUsd,2)}</td><td>${N(x.feeUsd,2)}</td><td><b>${N(x.usd,2)}</b></td><td><small class="mu">${E(x.note||"")}</small></td></tr>`).join("")||"<tr><td colspan='8' class='mu' style='text-align:center;padding:22px'>Sin cambios registrados</td></tr>"}</table></div></div>
+  </main>`;
+}
 
 function soc(){
   const c=S.cfg,tot=c.shares.reduce((s,x)=>s+x.pct,0);
-  return`<main><div class="card"><h3><span class="ico">👥</span>Socios y porcentajes</h3><p class="${tot==100?"pos":"neg"}" style="font-weight:600;margin-bottom:8px">Suma: ${tot}%</p><div class="tw"><table><tr><th>Socio</th><th>%</th><th></th></tr>${c.shares.map(s=>`<tr><td><input data-sn="${s.id}" value="${E(s.n)}"></td><td><input type="number" data-sp="${s.id}" value="${s.pct}"></td><td>${["car","san","les"].includes(s.id)?"":`<button class="dg" data-ds="${s.id}">✕</button>`}</td></tr>`).join("")}</table></div><div class="row"><div><label>Nuevo socio</label><input id="ns"></div><div><label>%</label><input id="np" type="number"></div><button class="pr" data-as="1">Agregar</button></div></div></main>`;
+  return`<main><div class="card"><h3><span class="ico">👥</span>Socios y porcentajes</h3><p class="${tot==100?"pos":"neg"}" style="font-weight:800;margin-bottom:10px">Suma: ${tot}%</p><div class="tw"><table><tr><th>Socio</th><th>%</th><th></th></tr>${c.shares.map(s=>`<tr><td><input data-sn="${s.id}" value="${E(s.n)}"></td><td><input type="number" data-sp="${s.id}" value="${s.pct}"></td><td>${["car","san","les"].includes(s.id)?"":`<button class="dg" data-ds="${s.id}">✕</button>`}</td></tr>`).join("")}</table></div><div class="row"><div><label>Nuevo socio</label><input id="ns"></div><div><label>%</label><input id="np" type="number"></div><button class="pr" data-as="1">Agregar</button></div></div></main>`;
 }
 
 function aud(){
   const f=$("#af")?v("af"):"",u=$("#au")?v("au"):"";
   const l=[...S.log].reverse().filter(x=>(!f||x.d==f)&&(!u||x.u==u)&&(!q||(x.a+x.x).toLowerCase().includes(q.toLowerCase())));
-  return`<main><div class="card"><h3><span class="ico">🔍</span>Auditoría</h3><div class="row"><div><label>Fecha</label><input id="af" type="date" value="${f}"></div><div><label>Usuario</label><select id="au"><option value="">Todos</option>${S.users.map(x=>`<option ${x.n==u?"selected":""}>${x.n}</option>`).join("")}</select></div><input id="q" placeholder="🔍 Tipo o texto..." value="${E(q)}"></div><div class="tw"><table><tr><th>Fecha</th><th>Hora</th><th>Usuario</th><th>Acción</th><th>Detalle</th></tr>${l.map(x=>`<tr><td>${x.d}</td><td>${x.t}</td><td>${E(x.u)}</td><td>${E(x.a)}</td><td>${E(x.x)}</td></tr>`).join("")||"<tr><td colspan='99' class='mu' style='text-align:center;padding:14px'>Sin registros</td></tr>"}</table></div></div></main>`;
+  return`<main><div class="card"><h3><span class="ico">🔍</span>Auditoría</h3><div class="row"><div><label>Fecha</label><input id="af" type="date" value="${f}"></div><div><label>Usuario</label><select id="au"><option value="">Todos</option>${S.users.map(x=>`<option ${x.n==u?"selected":""}>${x.n}</option>`).join("")}</select></div><input id="q" placeholder="🔍 Buscar..." value="${E(q)}"></div><div class="tw"><table><tr><th>Fecha</th><th>Hora</th><th>Usuario</th><th>Acción</th><th>Detalle</th></tr>${l.map(x=>`<tr><td>${x.d}</td><td>${x.t}</td><td>${E(x.u)}</td><td>${E(x.a)}</td><td><small class="mu">${E(x.x)}</small></td></tr>`).join("")||"<tr><td colspan='99' class='mu' style='text-align:center;padding:22px'>Sin registros</td></tr>"}</table></div></div></main>`;
 }
 
 function salv(){
-  return`<main><div class="card"><h3><span class="ico">📤</span>Salvas</h3><p class="mu">La salva se envía por WhatsApp o se descarga. Quien la importa solo agrega registros nuevos, sin borrar los existentes.</p><div class="row"><div><label>Desde</label><input id="xf" type="date" value="${today()}"></div><div><label>Hasta</label><input id="xt" type="date" value="${today()}"></div></div><div class="row"><button class="pr" data-x="file">📥 Compartir/descargar</button><button class="wa" data-x="wa">📤 Enviar resumen WhatsApp</button>${A()?`<button data-x="full">Respaldo completo</button>`:""}</div><p class="mu">WhatsApp de Lester: ${S.cfg.wa}. El archivo se comparte con "Compartir".</p></div>
-  <div class="card"><h3><span class="ico">📥</span>Importar salva</h3><p class="mu">Al importar un archivo de Lester, se agregan pedidos, gastos y configuración (si eres admin y marcas la casilla). No sustituye tus datos.</p><div class="row"><input type="file" id="imp" accept=".json"></div>${A()?`<label style="display:flex;align-items:center;gap:8px;font-size:.85rem;margin-top:8px"><input type="checkbox" id="ic" style="width:auto"> Restaurar también configuración y usuarios (solo admin)</label>`:""}</div></main>`;
+  return`<main><div class="card"><h3><span class="ico">📤</span>Salvas</h3><p class="mu">Envío por WhatsApp o descarga. Quien la importa solo agrega registros nuevos, sin borrar los existentes.</p><div class="row"><div><label>Desde</label><input id="xf" type="date" value="${today()}"></div><div><label>Hasta</label><input id="xt" type="date" value="${today()}"></div></div>
+  <div class="row"><button class="pr" data-x="file">📥 Compartir / descargar</button><button class="wa" data-x="wa">📤 Enviar por WhatsApp</button>${A()?`<button data-x="full">Respaldo completo</button>`:""}</div>
+  <p class="mu">WhatsApp de Lester: ${S.cfg.wa}. El archivo se comparte con "Compartir".</p></div>
+  <div class="card"><h3><span class="ico">📥</span>Importar salva</h3><p class="mu">Al importar un archivo de Lester, se agregan registros y configuración (si eres admin y marcas la casilla). No sustituye tus datos.</p><div class="row"><input type="file" id="imp" accept=".json"></div>${A()?`<label style="display:flex;align-items:center;gap:8px;font-size:.88rem;margin-top:10px"><input type="checkbox" id="ic" style="width:auto"> Restaurar también configuración y usuarios (solo admin)</label>`:""}</div></main>`;
 }
 
 function cfg(){
@@ -300,101 +418,78 @@ function cfg(){
 
 function manual(){
   return`<main class="manual">
-  <div class="card" style="background:var(--pri-g);color:#fff;text-align:center"><h2 style="color:#fff;border:none;margin:0 0 8px;padding:0;font-size:1.3rem">📖 Manual de uso</h2><p style="opacity:.9;margin:0;font-size:.88rem">Escrito por Lester para Santiago</p></div>
+  <div class="card" style="background:linear-gradient(135deg,#0f172a,#f97316);color:#fff;text-align:center;border:none"><h2 style="color:#fff;border:none;margin:0 0 8px;padding:0;font-size:1.4rem">📖 Manual de uso</h2><p style="opacity:.9;margin:0;font-size:.9rem">Escrito por Lester para Santiago</p></div>
   <div class="card">
   <h2>👋 Hola, Santiago</h2>
-  <p>Este manual lo escribí yo, Lester, para que tengas claro cómo usar la app en tu día a día. La idea es que entre los dos llevemos las cuentas claras, sin enredos. Léelo con calma la primera vez y después consúltalo cuando tengas dudas.</p>
+  <p>Este manual lo escribí yo, Lester, para que tengas claro cómo usar la app en tu día a día. La idea es que entre los dos llevemos las cuentas claras, sin enredos.</p>
   <blockquote>Regla de oro: todo lo que entra o sale del carro debe quedar registrado. Si no está en la app, no existe.</blockquote>
 
   <h2>🔐 1. Entrar a la app</h2>
-  <div class="step"><b>1</b><span>Escribe tu usuario <b>santiago</b> y tu clave (te la di personalmente).</span></div>
-  <div class="step"><b>2</b><span>Pulsa <b>Entrar</b>. Si te equivocas, te saldrá un mensaje y podrás intentarlo de nuevo.</span></div>
-  <div class="step"><b>3</b><span>Si olvidas la clave, avísame y te la cambio desde mi panel de administrador.</span></div>
+  <div class="step"><b>1</b><span>Abre la app. Verás dos tarjetas grandes: <b>Lester</b> y <b>Santiago</b>.</span></div>
+  <div class="step"><b>2</b><span>Toca tu tarjeta (<b>Santiago</b>). Se desplegará el campo de clave.</span></div>
+  <div class="step"><b>3</b><span>Escribe tu clave (te la di personalmente) y pulsa <b>Entrar</b>.</span></div>
 
-  <h2>🏠 2. Pantalla de inicio</h2>
-  <p>Aquí ves el resumen del negocio. Lo más importante:</p>
-  <ul>
-    <li><b>Tasa CUP/USD</b>: la puedes cambiar tú mismo con el botón del lápiz. Usa la tasa del día. Afecta los cálculos del préstamo de Osvaldito.</li>
-    <li><b>Préstamo de Osvaldito</b>: la barra muestra cuánto se ha recuperado. El dinero es de Osvaldito; yo solo lo administro.</li>
-    <li><b>Quincena</b>: selecciona el mes y la quincena para ver resultados. Solo cuentan los días cerrados.</li>
-    <li><b>Reparto por socio</b>: Carro 30%, tú 50%, yo 20%. Esto se calcula al cerrar cada día.</li>
-  </ul>
+  <h2>💱 2. Tasa de cambio</h2>
+  <p>En Inicio ves la tasa del día en la cabecera y en la tarjeta "Tasa de cambio".</p>
+  <div class="step"><b>1</b><span>Cuando cambie la tasa, escribe la nueva y pulsa <b>Registrar tasa</b>.</span></div>
+  <div class="step"><b>2</b><span>Se guarda con fecha y hora. Todos los cálculos nuevos usarán esa tasa; los antiguos conservan la suya.</span></div>
+  <div class="step"><b>3</b><span>Puedes poner una nota (fuente, acuerdo, referencia).</span></div>
 
-  <h2>🚗 3. Registrar viajes</h2>
+  <h2>🏦 3. Préstamo de Osvaldito</h2>
+  <p>Todo se lleva en <b>USD</b>. El dinero es de Osvaldito; yo lo administro. Cuando el préstamo esté pendiente, un % de la ganancia diaria se abona automáticamente al cerrar el día. Cada abono se guarda en USD.</p>
+
+  <h2>🚗 4. Registrar viajes</h2>
   <div class="step"><b>1</b><span>Entra a <b>Viajes</b> en la barra inferior.</span></div>
   <div class="step"><b>2</b><span>Completa: fecha, hora, actividad (Pasajeros, Gestión coordinada, Uso personal), origen, destino y monto.</span></div>
-  <div class="step"><b>3</b><span>Si es <b>Gestión coordinada</b>, describe qué se hizo (ej.: "Compra de piezas").</span></div>
-  <div class="step"><b>4</b><span>Si es <b>Uso personal</b>, el monto es 0 (no genera ingreso, pero queda registrado).</span></div>
-  <div class="step"><b>5</b><span>Pulsa <b>Registrar</b>. Verás el viaje en la tabla.</span></div>
+  <div class="step"><b>3</b><span>Si es <b>Uso personal</b>, el monto es 0 (queda registrado, no genera ingreso).</span></div>
+  <div class="step"><b>4</b><span>Pulsa <b>Registrar</b>. Verás el viaje en la tabla con su equivalente en USD.</span></div>
 
-  <h2>⛽ 4. Combustible</h2>
-  <p><b>Importante:</b> no tienes que registrar combustible todos los días. Solo cuando compres.</p>
-  <div class="step"><b>1</b><span>Entra a <b>Combustible</b> en el menú "Más".</span></div>
-  <div class="step"><b>2</b><span>Pon los litros y el precio por litro. El importe se calcula solo.</span></div>
-  <div class="step"><b>3</b><span>Si el precio cambia, actualízalo. La app usa el precio de la última compra para calcular el gasto diario.</span></div>
+  <h2>⛽ 5. Combustible</h2>
+  <p>Solo registras cuando compras. Pon litros y precio por litro; el importe se calcula solo.</p>
 
-  <h2>✅ 5. Cerrar el día (lo más importante)</h2>
-  <p>Esto lo haces <b>al final de cada día</b>, cuando ya no haya más viajes.</p>
+  <h2>✅ 6. Cerrar el día (lo más importante)</h2>
   <div class="step"><b>1</b><span>Entra a <b>Cierre</b> en la barra inferior.</span></div>
-  <div class="step"><b>2</b><span>Verifica que la fecha sea la correcta.</span></div>
-  <div class="step"><b>3</b><span>Indica <b>cuántos litros de combustible</b> se usaron en el negocio conjunto (no en tus asuntos personales).</span></div>
-  <div class="step"><b>4</b><span>Revisa el resumen: ingresos, combustible, neta y reparto. Si todo está bien, pulsa <b>Cerrar día</b>.</span></div>
-  <div class="step"><b>5</b><span>Se reparte automáticamente: 50% al préstamo de Osvaldito (si está pendiente), y el resto 30/50/20.</span></div>
-  <div class="step"><b>6</b><span>Pulsa <b>Salva + WhatsApp</b> para enviarme el cierre al +5354065166. Yo lo importaré y veré todo.</span></div>
-  <blockquote>Si cierras el día por error, avísame. Solo yo puedo borrar un cierre.</blockquote>
+  <div class="step"><b>2</b><span>Verifica la fecha.</span></div>
+  <div class="step"><b>3</b><span>Indica cuántos litros se usaron en el negocio (no en asuntos personales).</span></div>
+  <div class="step"><b>4</b><span>Revisa el resumen: ingresos, combustible, neta y reparto. Verás CUP y equivalente USD.</span></div>
+  <div class="step"><b>5</b><span>Pulsa <b>Cerrar día</b>. Se reparte automáticamente: 50% al préstamo de Osvaldito (si pendiente), el resto 30/50/20.</span></div>
+  <div class="step"><b>6</b><span>Pulsa <b>Salva + WhatsApp</b> para enviármelo al +5354065166.</span></div>
+  <blockquote>Si cierras por error, avísame. Solo yo puedo borrar un cierre.</blockquote>
 
-  <h2>💰 6. Caja</h2>
-  <p>Aquí ves el saldo de cada cuenta:</p>
-  <ul>
-    <li><b>Carro</b>: 30% para compras y reparaciones.</li>
-    <li><b>Santiago</b>: tu 50%.</li>
-    <li><b>Lester</b>: mi 20%.</li>
-    <li><b>Osvaldito · préstamo</b>: lo apartado para devolverle el préstamo.</li>
-  </ul>
-  <p>Cuando <b>entregues dinero</b> a alguien o <b>uses saldo</b> (compras, reparaciones), regístralo con el botón <b>Registrar entrega / retiro</b>. Así el saldo disponible se mantiene correcto.</p>
-  <blockquote>Ejemplo: si compras una pieza con el dinero del Carro, registra un retiro de la cuenta Carro con el concepto "Compra de pieza X".</blockquote>
+  <h2>💰 7. Caja</h2>
+  <p>Ves el saldo de cada cuenta: Carro (30%), Santiago (50%), Lester (20%) y Osvaldito · préstamo (USD). Cada fila muestra CUP y su equivalente en USD, o USD con su equivalente en CUP.</p>
+  <p>Cuando entregues dinero o uses saldo (compras, reparaciones), regístralo con <b>Registrar entrega / retiro</b>.</p>
 
-  <h2>📨 7. Pedidos de Lester</h2>
-  <p>Cuando yo necesite que uses parte de mi saldo o del pendiente de Osvaldito para algo, te dejo un <b>pedido</b> en la app. Al importar mi salva, aparecerá en esta sección.</p>
-  <div class="step"><b>1</b><span>Entra a <b>Pedidos</b> en "Más".</span></div>
-  <div class="step"><b>2</b><span>Verás los pedidos pendientes. Cuando cumplas uno (compres lo que pedí o uses el saldo), pulsa <b>Usar</b>.</span></div>
-  <div class="step"><b>3</b><span>Se registrará automáticamente el retiro de la cuenta correspondiente y el pedido quedará marcado como usado.</span></div>
+  <h2>📨 8. Pedidos de Lester</h2>
+  <p>Cuando yo necesite que uses mi saldo o el de Osvaldito, te dejo un pedido. Al importar mi salva aparecerá aquí. Cuando lo cumplas, pulsa <b>Usar</b> y se descuenta automáticamente.</p>
 
-  <h2>🛍️ 8. Gastos de Lester</h2>
-  <p>Cuando yo compre algo para el negocio y te lo envíe (piezas, insumos, etc.), lo registras aquí. Si es parte del préstamo de Osvaldito, aumenta el total. Si no, queda como gasto mío.</p>
+  <h2>🛍️ 9. Gastos de Lester</h2>
+  <p>Si yo compro algo para el negocio y te lo envío, lo registras aquí. Si marca "Sí, es préstamo", se suma al total de Osvaldito en USD.</p>
 
-  <h2>📤 9. Salvas (importar y exportar)</h2>
-  <div class="step"><b>1</b><span>Entra a <b>Salvas</b> en "Más".</span></div>
-  <div class="step"><b>2</b><span>Para enviarme datos: selecciona el rango de fechas y pulsa <b>Compartir/descargar</b> o <b>WhatsApp</b>.</span></div>
-  <div class="step"><b>3</b><span>Para importar lo que yo te envíe: en <b>Importar salva</b>, elige el archivo .json que te mandé y se agregarán los registros nuevos.</span></div>
-  <blockquote>La importación nunca borra tus datos anteriores. Solo agrega.</blockquote>
+  <h2>💱 10. Cambios CUP/USD</h2>
+  <div class="step"><b>1</b><span>Entra a <b>Cambios CUP/USD</b> en Más.</span></div>
+  <div class="step"><b>2</b><span>Registra el cambio: CUP entregados, tasa pactada y comisión. Se calcula el USD neto recibido.</span></div>
+  <div class="step"><b>3</b><span>Si tenías CUP reservados en el control de pendientes, se descuentan automáticamente.</span></div>
+  <div class="step"><b>4</b><span>El histórico conserva cada cambio con su tasa. La equivalencia USD de los pendientes se recalcula al tipo actual.</span></div>
 
-  <h2>⏰ 10. Rutina recomendada</h2>
-  <h3>Diaria (al final del día)</h3>
-  <ol>
-    <li>Registrar todos los viajes del día.</li>
-    <li>Registrar compras de combustible si las hubo.</li>
-    <li>Cerrar el día y enviar salva por WhatsApp.</li>
-  </ol>
+  <h2>📤 11. Salvas</h2>
+  <p>Envía/importa archivos .json. La importación solo agrega registros nuevos, nunca borra los existentes.</p>
+
+  <h2>⏰ 12. Rutina recomendada</h2>
+  <h3>Diaria</h3>
+  <ol><li>Registrar todos los viajes.</li><li>Registrar compras de combustible si hubo.</li><li>Cerrar el día y enviar salva por WhatsApp.</li></ol>
   <h3>Semanal</h3>
-  <ol>
-    <li>Revisar la caja y registrar entregas o retiros.</li>
-    <li>Verificar que los saldos coincidan con el dinero real.</li>
-  </ol>
+  <ol><li>Revisar la caja y registrar entregas.</li><li>Verificar saldos contra el dinero real.</li></ol>
   <h3>Quincenal</h3>
-  <ol>
-    <li>Revisar el resumen de la quincena en Inicio.</li>
-    <li>Entregar a Osvaldito lo acumulado en su cuenta.</li>
-    <li>Revisar conmigo si hay pedidos pendientes.</li>
-  </ol>
+  <ol><li>Revisar el resumen de quincena en Inicio.</li><li>Entregar a Osvaldito lo acumulado.</li><li>Revisar pedidos pendientes.</li></ol>
 
-  <h2>💡 11. Consejos finales</h2>
+  <h2>💡 13. Consejos finales</h2>
   <ul>
-    <li>No dejes para mañana los cierres: entre más rápido, menos errores.</li>
+    <li>No dejes para mañana los cierres.</li>
     <li>Si un viaje se te olvidó, regístralo igual con la fecha correcta.</li>
-    <li>Ante cualquier duda, escríbeme por WhatsApp. Es mejor preguntar que adivinar.</li>
-    <li>Revisa la tasa de cambio cada vez que cambie: afecta el préstamo de Osvaldito.</li>
+    <li>Actualiza la tasa cuando cambie.</li>
     <li>Guarda tus salvas: son tu respaldo si algo pasa con el teléfono.</li>
+    <li>Ante cualquier duda, escríbeme. Mejor preguntar que adivinar.</li>
   </ul>
   <blockquote>Cualquier cosa, aquí estoy. Entre los dos sacamos esto adelante. — Lester</blockquote>
   </div></main>`;
@@ -403,17 +498,23 @@ function manual(){
 function mas(){
   const items=[
     ["fuel","⛽","Combustible"],["inv","🏦","Inversiones"],["orders","📨","Pedidos"],["lexp","🛍️","Gastos Lester"],
-    ["soc","👥","Socios"],["aud","🔍","Auditoría"],["salv","📤","Salvas"],["manual","📖","Manual"],["cfg","⚙️","Config"]
+    ["fx","💱","Cambios CUP/USD"],["soc","👥","Socios"],["aud","🔍","Auditoría"],["salv","📤","Salvas"],["manual","📖","Manual"],["cfg","⚙️","Config"]
   ].filter(i=>!["soc","aud","cfg"].includes(i[0])||A());
   return`<main><div class="card"><h3><span class="ico">📂</span>Más secciones</h3><div class="menu-grid">${items.map(([t,i,l])=>`<button data-t="${t}"><span class="mi">${i}</span>${l}</button>`).join("")}</div></div></main>`;
 }
 
 function R(){
+  const rb=$("#rateBadge");if(rb)rb.textContent=`1 USD = ${N(currentRate())} CUP`;
   if(!me){
-    $("#root").innerHTML=`<div id="lg"><div class="card"><div class="logo">🤝</div><h2>Alianza</h2><p class="sub">Santiago & Lester</p><div class="row"><div><label>Usuario</label><input id="lu" autocomplete="username"></div></div><div class="row"><div><label>Clave</label><input id="lp" type="password" autocomplete="current-password"></div></div><button class="pr" data-login="1" style="width:100%;margin-top:8px;padding:11px">Entrar</button></div></div>`;
+    $("#root").innerHTML=`<div id="lg"><div class="login-wrap"><div class="logo">🤝</div><h2>Alianza</h2><p class="sub">Santiago & Lester</p><p class="pick-label">Selecciona tu usuario</p>
+    <div class="user-grid">${S.users.map(u=>`<button class="user-card ${sel==u.u?"sel":""}" data-pick="${u.u}"><div class="avatar">${E((u.n||"?")[0])}</div><b>${E(u.n)}</b><small>${u.role=="admin"?"Administrador":"Reporte"}</small></button>`).join("")}</div>
+    <div id="pwBox" style="display:${sel?"":"none"}">
+      <div class="row"><div><label>Clave de <span id="pwUser">${sel?E((S.users.find(u=>u.u==sel)||{}).n||""):""}</span></label><input id="lp" type="password" autocomplete="current-password"></div></div>
+      <button class="pr cta" data-login="1">Entrar</button>
+    </div></div></div>`;
     return;
   }
-  const V={dash,cierre,caja,inv,soc,aud,salv,cfg,manual,mas,trips:()=>mod("trips"),fuel:()=>mod("fuel"),orders,lexp};
+  const V={dash,cierre,caja,inv,soc,aud,fx,salv,cfg,manual,mas,trips:()=>mod("trips"),fuel:()=>mod("fuel"),orders,lexp};
   $("#root").innerHTML=`${V[tab]()}<nav class="bnav">${[
     ["dash","Inicio",'M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1V10'],
     ["trips","Viajes",'M5 17h14M5 17a2 2 0 01-2-2V9a2 2 0 012-2h1l2-3h8l2 3h1a2 2 0 012 2v6a2 2 0 01-2 2M5 17v2m14-2v2'],
@@ -423,6 +524,11 @@ function R(){
   ].map(([t,l,p])=>`<button class="${tab==t?"on":""}" data-t="${t}">${ico(p)}<span>${l}</span></button>`).join("")}</nav>`;
   save();
   const x=$("#q");if(x&&q){x.focus();x.setSelectionRange(q.length,q.length)}
+  if(tab=="fx"){
+    const c=$("#excup"),r=$("#exrate"),u=$("#exusd"),f=$("#exfee");
+    const calc=()=>{if(c&&r&&u){const cu=+c.value,r2=+r.value,fe=+(f?.value||0);u.value=(cu>0&&r2>0)?(cu/r2-fe).toFixed(2):""}};
+    [c,r,f].filter(Boolean).forEach(x=>x.addEventListener("input",calc));calc();
+  }
   if(tab=="fuel"){
     const lit=$("#f_fuel_lit"),pre=$("#f_fuel_precio"),tot=$("#f_fuel_amt");
     const calc=()=>{if(lit&&pre&&tot){const l=+lit.value||0,p=+pre.value||0;tot.value=(l*p).toFixed(2)}};
@@ -432,10 +538,10 @@ function R(){
 setInterval(()=>{$("#clk").textContent=new Date().toLocaleString("es",{weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"})},1000);
 
 /* ===== Salvas ===== */
-const KS=["trips","fuel","inv","lexp","orders","caja","dist","log"];
+const KS=["trips","fuel","inv","lexp","orders","caja","dist","log","rates","exchanges","pendingCUP"];
 function expo(full){
   const f=v("xf"),t=v("xt"),ok=d=>!d||((!f||d>=f)&&(!t||d<=t));
-  const o={v:4,by:me.n,ts:new Date().toISOString(),from:f,to:t};
+  const o={v:6,by:me.n,ts:new Date().toISOString(),from:f,to:t};
   KS.forEach(k=>o[k]=S[k].filter(r=>ok(r.d)));
   if(full&&A()){o.cfg=S.cfg;o.users=S.users}
   return o;
@@ -449,11 +555,11 @@ function imp(o,rc){
 }
 function enviarSalvaDia(){
   const d=$("#cd")?v("cd"):today();
-  const o={v:4,by:me.n,ts:new Date().toISOString(),from:d,to:d};
+  const o={v:6,by:me.n,ts:new Date().toISOString(),from:d,to:d};
   KS.forEach(k=>o[k]=S[k].filter(r=>r.d==d));
   const D0=S.dist.filter(x=>x.d==d)[0]||{};
   const g=k=>D0[k]||0;
-  const txt=`📋 *Salva del día ${d}*\n📊 Ingresos: ${N(g("I"))} CUP\n⛽ Combustible: ${N(g("fN"))} CUP\n💰 Neta: ${N(g("Nt"))} CUP\n🏦 A Osvaldito: ${N(g("payCup"))} CUP\n👥 Reparto: ${S.cfg.shares.map(s=>s.n+" "+N((D0.sh||{})[s.id]||0)).join(" · ")}\n📉 Préstamo pendiente: USD ${N(loanPend(),2)}`;
+  const txt=`📋 *Salva del día ${d}*\n📊 Ingresos: ${N(g("I"))} CUP (≈ USD ${N(usdEq(g("I"),D0.rate||currentRate()),2)})\n⛽ Combustible: ${N(g("fN"))} CUP\n💰 Neta: ${N(g("Nt"))} CUP (≈ USD ${N(usdEq(g("Nt"),D0.rate||currentRate()),2)})\n🏦 A Osvaldito: USD ${N(g("payUsd"),2)}\n👥 Reparto: ${S.cfg.shares.map(s=>s.n+" "+N((D0.sh||{})[s.id]||0)).join(" · ")}\n📉 Préstamo pendiente: USD ${N(loanPend(),2)}`;
   window.open(`https://wa.me/${S.cfg.wa}?text=${encodeURIComponent(txt)}`,"_blank","noopener");
   lg("Envió salva por WhatsApp",d);
   const file=new File([JSON.stringify(o)],`salva-${d}.json`,{type:"application/json"});
@@ -462,60 +568,113 @@ function enviarSalvaDia(){
 
 /* ===== Eventos ===== */
 document.addEventListener("input",e=>{if(e.target.id=="q"){q=e.target.value;R()}});
-document.addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target.id=="lp")document.querySelector("[data-login]").click()});
+document.addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target.id=="lp")document.querySelector("[data-login]")?.click()});
 
 document.addEventListener("click",async e=>{
-  const tg=e.target.closest("[data-login],[data-out],[data-t],[data-add],[data-del],[data-close],[data-ret],[data-as],[data-ds],[data-au],[data-du],[data-reset],[data-x],[data-q],[data-wadian],[data-addorder],[data-useorder]");
+  const tg=e.target.closest("[data-login],[data-out],[data-t],[data-add],[data-del],[data-close],[data-ret],[data-as],[data-ds],[data-au],[data-du],[data-reset],[data-x],[data-q],[data-wadian],[data-addorder],[data-useorder],[data-rate-save],[data-exchange],[data-pending-add],[data-pick]");
   if(!tg)return;const d=tg.dataset;
-  if(d.login){const u=S.users.find(x=>x.u==v("lu").trim().toLowerCase()&&x.p==v("lp"));if(!u)return toast("Usuario o clave incorrectos");me=u;try{sessionStorage.setItem("u",u.u)}catch(z){}tab="dash";lg("Inició sesión","");return R()}
-  if(d.out){me=null;try{sessionStorage.removeItem("u")}catch(z){}return R()}
+
+  if(d.pick){sel=d.pick;R();setTimeout(()=>$("#lp")?.focus(),100);return}
+  if(d.login){
+    if(!sel)return toast("Selecciona un usuario");
+    const u=S.users.find(x=>x.u==sel&&x.p==v("lp"));
+    if(!u)return toast("Clave incorrecta");
+    me=u;try{sessionStorage.setItem("u",u.u)}catch(z){}tab="dash";lg("Inició sesión","");return R();
+  }
+  if(d.out){me=null;sel=null;try{sessionStorage.removeItem("u")}catch(z){}return R()}
   if(d.t){tab=d.t;q="";armed="";return R()}
   if(d.q){qm=d.q.slice(0,7);qh=+d.q.slice(-1);return R()}
+
   if(d.add){
     const k=d.add,M=MOD[k],r={id:UID(),rate:S.cfg.rate,by:me.n,...(M.fix||{})};
     M.f.forEach(([key,ty])=>{let x=v(`f_${k}_${key}`);if(ty=="number")x=+x;if(ty=="loan")x=x=="1";r[key]=x});
+    r.rate=rateAt(r.d||today(),now());
+    if(k=="inv"){r.cur="USD";r.loan=true;}
     if(k=="fuel"&&r.lit&&r.precio)r.amt=r.lit*r.precio;
+    if(k=="lexp"){r.loanUsd=r.loan?(r.cur=="USD"?r.amt:usdEq(r.amt,r.rate)):0}
     if(k=="trips"){if(r.act=="per")r.amt=0;else if(!r.amt)return toast("Falta el monto");if(r.act=="ges"&&!r.desc)return toast("Describe la gestión")}
     else if(M.req.some(x=>!r[x]))return toast("Completa los campos");
-    S[k].push(r);lg("Registró: "+M.t,`${r.what||r.desc||""} ${r.lit?N(r.lit,1)+" L ":""}${r.amt?N(r.amt,2)+" "+r.cur:""}`);toast("Guardado");return R();
+    S[k].push(r);lg("Registró: "+M.t,`${r.what||r.desc||""} ${r.lit?N(r.lit,1)+" L ":""}${r.amt?N(r.amt,2)+" "+r.cur:""}`);
+    toast("Guardado");return R();
   }
   if(d.del){const[k,id]=d.del.split("|");if(armed!=k+id){armed=k+id;return R()}S[k]=S[k].filter(r=>r.id!=id);if(k=="dist")S.caja=S.caja.filter(c=>c.auto!=id);lg("Eliminó",k);armed="";return R()}
+
+  if(d.rateSave){
+    const rate=+v("rate");if(!(rate>0))return toast("La tasa debe ser > 0");
+    S.rates.push({id:UID(),d:today(),t:now(),rate,by:me.n,note:$("#rateNote")?.value||""});
+    S.cfg.rate=rate;lg("Registró tasa",`${rate} CUP/USD`);toast("Tasa registrada");return R();
+  }
+
+  if(d.exchange){
+    const cupAmt=+v("excup"),rate=+v("exrate"),fee=+v("exfee")||0;
+    if(!(cupAmt>0&&rate>0))return toast("Introduce CUP y tasa válidos");
+    const grossUsd=cupAmt/rate,usdNet=grossUsd-fee;
+    if(usdNet<0)return toast("La comisión no puede superar el cambio");
+    S.exchanges.push({id:UID(),d:v("exd")||today(),t:v("ext")||now(),cup:cupAmt,rate,grossUsd,feeUsd:fee,usd:usdNet,note:v("exnote"),by:me.n});
+    let left=cupAmt;
+    for(const p of S.pendingCUP){const due=Math.max(0,p.amount-(p.converted||0));const take=Math.min(left,due);p.converted=(p.converted||0)+take;left-=take;if(left<=0)break}
+    lg("Cambió CUP a USD",`${N(cupAmt)} CUP ÷ ${rate} = USD ${N(usdNet,2)}`);
+    toast("Cambio guardado con tasa histórica");return R();
+  }
+
+  if(d.pendingAdd){
+    const amt=+v("pcamt"),note=v("pcnote");
+    if(!(amt>0)||!note)return toast("Indica concepto e importe");
+    S.pendingCUP.push({id:UID(),d:today(),note,amount:amt,converted:0,by:me.n});
+    lg("Añadió CUP pendientes",`${N(amt)} CUP · ${note}`);return R();
+  }
+
   if(d.close){
     const dt=v("cd"),L=v("cl")===""?cc(dt,0).litT:+v("cl"),c=cc(dt,L);
     if(S.dist.some(x=>x.d==dt))return toast("Día ya cerrado");
     if(!c.I&&!c.litT)return toast("Sin movimientos");
     const id=UID();S.dist.push({id,d:dt,by:me.n,...c});
-    S.cfg.shares.forEach(s=>c.sh[s.id]>0&&S.caja.push({id:UID(),d:dt,t:now(),acc:s.id,kind:"c",concept:"Reparto "+dt,amt:c.sh[s.id],by:me.n,auto:id}));
-    if(c.payCup>0)S.caja.push({id:UID(),d:dt,t:now(),acc:"osv",kind:"c",concept:"Recuperación Osvaldito "+dt,amt:c.payCup,by:me.n,auto:id});
-    lg("Cerró día",`${dt}: neta ${N(c.Nt)}`);toast("Día cerrado");return R();
+    S.cfg.shares.forEach(s=>c.sh[s.id]>0&&S.caja.push({id:UID(),d:dt,t:now(),acc:s.id,kind:"c",concept:"Reparto "+dt,amt:c.sh[s.id],cur:"CUP",rate:c.rate,by:me.n,auto:id}));
+    if(c.payUsd>0)S.caja.push({id:UID(),d:dt,t:now(),acc:"osv",kind:"c",concept:"Abono préstamo Osvaldito "+dt,amt:c.payUsd,cur:"USD",rate:c.rate,cupEq:c.payCup,by:me.n,auto:id});
+    lg("Cerró día",`${dt}: neta ${N(c.Nt)} CUP, abono USD ${N(c.payUsd,2)}`);toast("Día cerrado y repartido");return R();
   }
   if(d.wadian){enviarSalvaDia();return}
-  if(d.ret){const a=v("ra"),m=+v("rm");if(!v("rc")||!(m>0))return toast("Completa concepto y monto");if(m>bal(a))return toast("Supera saldo ("+N(bal(a))+")");S.caja.push({id:UID(),d:v("rd")||today(),t:now(),acc:a,kind:"r",concept:v("rc"),amt:m,by:me.n});lg("Retiro",`${sn(a)}: ${N(m)}`);toast("Registrado");return R()}
+
+  if(d.ret){
+    const a=v("ra"),m=+v("rm");
+    if(!v("rc")||!(m>0))return toast("Completa concepto y monto");
+    if(m>bal(a))return toast("Supera saldo ("+(a=="osv"?N(bal(a),2)+" USD":N(bal(a))+" CUP")+")");
+    const rate=rateAt(v("rd")||today(),now());
+    S.caja.push({id:UID(),d:v("rd")||today(),t:now(),acc:a,kind:"r",concept:v("rc"),amt:m,cur:a=="osv"?"USD":"CUP",rate,by:me.n});
+    lg("Retiro",`${sn(a)}: ${N(m,2)} ${a=="osv"?"USD":"CUP"}`);toast("Registrado");return R();
+  }
+
   if(d.addorder){
     const acc=v("oa"),concept=v("oc"),amt=+v("om"),cur=v("ocur");
     if(!concept||!(amt>0))return toast("Completa concepto y monto");
-    S.orders.push({id:UID(),d:today(),by:me.n,acc,concept,amt,cur,status:"pend"});
+    S.orders.push({id:UID(),d:today(),by:me.n,acc,concept,amt,cur,status:"pend",rate:currentRate()});
     lg("Creó pedido",`${sn(acc)}: ${N(amt)} ${cur} · ${concept}`);toast("Pedido creado");return R();
   }
   if(d.useorder){
-    const o=S.orders.find(x=>x.id==d.useorder);if(!o||o.status=="used")return toast("Pedido no disponible");
-    const amtCup=o.cur=="USD"?o.amt*S.cfg.rate:o.amt;
-    if(amtCup>bal(o.acc))return toast("Saldo insuficiente en "+sn(o.acc)+" ("+N(bal(o.acc))+")");
-    S.caja.push({id:UID(),d:today(),t:now(),acc:o.acc,kind:"r",concept:"Pedido: "+o.concept,amt:amtCup,by:me.n});
+    const o=S.orders.find(x=>x.id==d.useorder);if(!o||o.status=="used")return toast("No disponible");
+    const rate=currentRate();
+    const amtNative=o.cur=="USD"?o.amt:o.amt;
+    const amtCUP=o.cur=="USD"?o.amt*rate:o.amt;
+    const curAcc=o.acc=="osv"?"USD":"CUP";
+    const nativeAmt=curAcc=="USD"?usdEq(amtCUP,rate):amtCUP;
+    if(nativeAmt>bal(o.acc))return toast("Saldo insuficiente en "+sn(o.acc));
+    S.caja.push({id:UID(),d:today(),t:now(),acc:o.acc,kind:"r",concept:"Pedido: "+o.concept,amt:nativeAmt,cur:curAcc,rate,by:me.n});
     o.status="used";o.usedD=today();o.usedBy=me.n;
-    lg("Usó pedido",`${sn(o.acc)}: ${N(amtCup)} CUP · ${o.concept}`);
+    lg("Usó pedido",`${sn(o.acc)}: ${N(nativeAmt,2)} ${curAcc} · ${o.concept}`);
     toast("Pedido usado y retiro registrado");return R();
   }
+
   if(d.as&&v("ns")){S.cfg.shares.push({id:UID(),n:v("ns"),pct:+v("np")||0});lg("Agregó socio",v("ns"));return R()}
   if(d.ds){S.cfg.shares=S.cfg.shares.filter(s=>s.id!=d.ds);return R()}
   if(d.au&&v("uu")&&v("up")){if(S.users.some(x=>x.u==v("uu").toLowerCase()))return toast("Usuario existe");S.users.push({u:v("uu").toLowerCase(),p:v("up"),role:v("ur"),n:v("un")||v("uu")});lg("Creó usuario",v("uu"));return R()}
   if(d.du){S.users=S.users.filter(x=>x.u!=d.du);lg("Eliminó usuario",d.du);return R()}
-  if(d.reset){if(armed!="reset"){armed="reset";return R()}try{localStorage.removeItem(KEY)}catch(z){}S=seed();me=null;armed="";return R()}
+  if(d.reset){if(armed!="reset"){armed="reset";return R()}try{localStorage.removeItem(KEY)}catch(z){}S=seed();me=null;sel=null;armed="";return R()}
+
   if(d.x){
     const full=d.x=="full",o=expo(full),f=`salva-${me.u}-${today()}.json`;
     if(d.x=="wa"){
       const g=k=>(o.dist||[]).reduce((s,x)=>s+(x[k]||0),0);
-      const txt=`Reporte ${me.n} ${o.from||""} a ${o.to||""}\nIngresos: ${N(g("I"))} CUP · Neta: ${N(g("Nt"))} CUP\nA Osvaldito: ${N(g("payCup"))} CUP\n${S.cfg.shares.map(s=>s.n+": "+N((o.dist||[]).reduce((a,x)=>a+((x.sh||{})[s.id]||0),0))).join(" · ")}\nPréstamo pendiente: USD ${N(loanPend(),2)}`;
+      const txt=`Reporte ${me.n} ${o.from||""} a ${o.to||""}\nIngresos: ${N(g("I"))} CUP (≈ USD ${N(usdEq(g("I")),2)})\nNeta: ${N(g("Nt"))} CUP (≈ USD ${N(usdEq(g("Nt")),2)})\nA Osvaldito: USD ${N(g("payUsd"),2)}\n${S.cfg.shares.map(s=>s.n+": "+N((o.dist||[]).reduce((a,x)=>a+((x.sh||{})[s.id]||0),0))+" CUP").join(" · ")}\nPréstamo pendiente: USD ${N(loanPend(),2)}`;
       window.open(`https://wa.me/${S.cfg.wa}?text=${encodeURIComponent(txt)}`,"_blank","noopener");lg("Envió WhatsApp","");return;
     }
     const file=new File([JSON.stringify(o)],f,{type:"application/json"});lg("Exportó salva",f);
@@ -533,6 +692,7 @@ document.addEventListener("change",e=>{
   if(d.sn){c.shares.find(s=>s.id==d.sn).n=t.value;return R()}
   if(d.sp){c.shares.find(s=>s.id==d.sp).pct=+t.value;lg("Cambió porcentajes","");return R()}
   if(d.pw&&t.value){S.users.find(x=>x.u==d.pw).p=t.value;lg("Cambió clave",d.pw);toast("Clave actualizada");t.value="";}
+  if(t.id=="ra"){const l=$("#rmLabel");if(l)l.textContent=t.value=="osv"?"Monto USD (préstamo)":"Monto CUP";return}
   if(["cd","cl","cf","af","au"].includes(t.id))return R();
   if(t.id=="imp"){
     const f=t.files[0],r=new FileReader();
